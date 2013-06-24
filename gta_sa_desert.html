@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<head>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AHVybgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIgAAAAIhERESIAAAAhEiIhEgAAACEgAAISAAAAISACIhIAAAAhIAIREgAAACEgAiIiAAAAISAAAAAAAAAhIAAAIgAAACESIiISAAAAIhERESIAAAACIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+	<title>Gamin' Walkthroughs</title>
+	</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+	  background-color: #121212;
+      padding-bottom: 40px;
+      color: #ffffff;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="Home.html">Gamin' Walkthroughs</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Browse.html">Browse</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacts</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://www.facebook.com/pages/Gamin-walkthrough/553422758029251">Facebook</a></li>
+                    <li><a href="https://twitter.com/GameWalkthroug4">Twitter</a></li>
+					<li><a href="#">YouTube</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="files/cod.jpg" alt="Call of Duty Black Ops II">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Call of Duty Black Ops II</h1>
+              <p class="lead">A brand new Gamin' Walkthrough for Call of Duty Black Ops 2 is in progress! We have consulted and played with professional players in order to bring you the best walkthrough possible. We interviewed famous Call of Duty professional players, who had much to say about the game..</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/halo4ss.jpg" alt="Halo 4">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Halo 4</h1>
+              <p class="lead">The best Halo 4 Legendary Walkthrough is now complete! We spent many hours playing through the game to find you only the best way to play through the game. </p>
+              <a class="btn btn-large btn-primary" href="#">Walk Me Through!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/qlss.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Quake LIVE Online Guide</h1>
+              <p class="lead">We at Gamin' Walkthroughs have spent months researching to bring you the best Online Guide for Quake LIVE! Our Walkthrough covers topics from config, gamestyles, and even how to use different weapons!</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+	
+	<div class="container">
+
+	  <h2>Grand Theft Auto: San Andreas</h2><img src="files/gta_sa_cover_art.jpg" height="400" width="200" alt="Grand Theft Auto San Andreas" >
+	  <p>"Grand Theft Auto: San Andreas is a 2004 open world action-adventure video game developed by Rockstar North in the United Kingdom and published by Rockstar Games. It is the third 3D game in the Grand Theft Auto video game franchise, the fifth original console release and eighth game overall. Originally released for the PlayStation 2 in October 2004,[2] the game has since been released for the Xbox and Microsoft Windows in June 2005, then released on the Xbox Live Marketplace for the Xbox 360 in October 2008, then released on the PlayStation Store via PSN for the PlayStation 3 in December 2012, and has received wide acclaim and high sales figures on all platforms. It is the best-selling game of all time on PlayStation 2. It was made available on Steam on January 4, 2008,[6] and on Intel-based Macs running a minimum of Mac OS X 10.6.6 in September 2011. San Andreas was released for the PlayStation 3 via PlayStation Network in December 2012. Grand Theft Auto: San Andreas was succeeded by Grand Theft Auto: Liberty City Stories and was preceded by Grand Theft Auto: Vice City.
+		The game is set in the semi-fictional state of San Andreas (based on California and Nevada), which contains three metropolitan cities: Los Santos, based on Los Angeles, San Fierro, based on San Francisco, and Las Venturas, based on Las Vegas. Set in 1992,[7] San Andreas revolves around the gang member Carl "CJ" Johnson returning home from Liberty City to Los Santos, San Andreas, after learning of his mother's murder. CJ finds his old friends and family in disarray. Over the course of the game, CJ gradually unravels the plot behind his mother's murder.
+		The high-level plot of the game is based on multiple real-life events in Los Angeles including the rivalry between street gangs the Bloods and Crips (which the player's gang and rival gang are spoofed off of), the Crack epidemic (which is shown as a major point of conflict in the game), the LAPD Rampart scandal (forming the basis of several main antagonists in the game), and the game even culminates in a spoof of the 1992 Los Angeles riots."</p>
+		*From the <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas">Wikipedia</a> page.
+	<br>
+	<br>
+	<p align="left"><img src="http://media.gtanet.com/gtasa/images/toreno.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="monster"></a>Monster</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>The mystery caller's voice can be heard over a loudspeaker.  Carl demands to know what info he has about Sweet.  First however, he would like to see what you are made of.  One of the caller's workers explains your task.  Using the monster truck, you must get to each set of co-ordinates (represented by red markers) as quickly as possible.  Make it to all of them and then get the truck back to the ranch.  Lose the truck, and you fail.  The truck has 4 wheel steering instead of a handbreak, so use 'Square' to decellerate.</p><p>After the cutscene, get inside the monster truck.  As soon as you enter, a timer appears on-screen and you must get a better time than 06.30.  The monster truck is tough and sturdy, so you don't have to stick to the roads.  Instead, drive over the rocks, grass and desert to your destination.  Don't go too quickly, or you risk falling over the edge of a rock/mountain, and it can be difficult to recover.  It is very unlikely that the monster truck will topple, but if it does, play around with the left analog stick until you flip back over.  The only thing that is likely to disrupt your journey at the jagged rocks that stick out from the ground in the deserty areas, so watch out for those.  Go through all 35 markers to complete the mission.<br><br><i>Reward depends on the time you finished: $5000 for 1st, $4000 for 2nd, $3000 for 3rd, $2000 for 4th and $1000 for 5th.</i><br><blockquote><b>*The mystery character calls again.  He tells you to get back to the ranch immediately, so that he can explain <i>everything.</i></b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert001.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert001_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert002.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert002_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert003.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert003_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert004.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert004_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="hijack"></a>Hijack</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Mike Toreno greets Carl, and Carl admits that he screwed him over.  Toreno doesn't care, and goes onto explain that he works for a government agency, but it's not important which one.  Toreno's involvment with the Loco Syndicate was simply a means of gaining money and making new contacts.  He needs you to do things that he cannot be caught doing.  Toreno wants you to comandeer a truck - a rival agency with a confused social agenda.  They have things that he needs.  However, it is a two man job.  Toreno suggests using your sister's boyfriend, Cesar.  You need to use the bike in order to get Cesar close enough to the truck.</p><p>Pickup Cesar and catch up with the truck, which is heading to Foster Valley from Tierra Robada.  It is crossing the Garver Bridge.  Get on the bike with Cesar and drive up the hill, onto the Kincaid Rail Bridge.  Speed across the bridge, drive past the Xoomer garage and go onto the freeway.  Pull upto the left hand side of the truck and hold the bike in position until Cesar is ready to jump.  You must stay close to the door of the cab.  After the jump, get in the truck with Cesar and take it back to the garage in Doherty.  Stop in the red marker - Cesar takes the wheel, and Carl guides him into the garage.<br><br><a href="../screenshots/gallery.php?image=1234" target="_blank">» Map</a><br><br><i>$7000</i><br><blockquote><b>*Toreno calls.  Get to the ranch.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert005.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert005_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert006.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert006_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert007.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert007_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert008.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert008_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="interdiction"></a>Interdiction</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Toreno needs a favour, but Carl wants to know more about his brother.  Toreno explains - he's in prison up state, D wing Cell 13.  To the left he's got a child killer, who wants to rip his throat out, and to the right of him he's got a white supremacist, who wants to eat his heart!  Toreno reveals that Tenpenny and Pulaski killed Officer Pendelbury after he threatened to expose their operation.  He assures you that Sweet is fine.  He then goes onto explain your task - there is precious cargo that needs collecting.</p><p>Grab the BF Injection outside Toreno's ranch, and goto El Castillo del Diablo.  Stop in the red marker, and Toreno speaks to you through a loudspeaker.  Choose a vehicle (bike or dune buggy), pickup the Rocket Launcher and get to the drop point.  Choose the bike, and head upto the top of the mountain.  Stop in the red marker, and again, Toreno speaks to you via another loudspeaker.  CJ drops the flare and a chopper arrives with the cargo.  Toreno says the pilot is having trouble.  Suddenly, two agency choppers appear and begin to attack.  Protect the contraband helicopter from the spooks.  A healthbar appears for the chopper.  Shoot down the two choppers as quickly as possible, and more will arrive.  Wait until they are fairly close before shooting, to ensure that you don't run out of rockets.  The closer you are to the chopper, the more likely you are to hit it.  The chances that you'll hit a chopper which is far away, are low.  You gain a 2 star wanted level.  The chopper leaves the scene and drops the package in the middle of the desert.  Go and pick it up.  Toreno talks to you through yet another loudspeaker, and tells you to get the package back to Las Brujas.  Stop in the red marker in the garage, to complete the mission.<br><br><a href="../screenshots/gallery.php?image=1235" target="_blank">» Map</a><br><br><i>$1000</i>    
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert009.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert009_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert010.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert010_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert011.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert011_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert012.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert012_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert013.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert013_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert014.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert014_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert015.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert015_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert016.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert016_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="verdantmeadows"></a>Verdant Meadows</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>"Look at this history", Toreno says.  "It's all lies, it says that Hitler killed himself and that we nuked Japan".  Anyway, Toreno says he used Sweet as an excuse to get you to jobs for him.  They aren't releasing him yet, but they <b>are</b> looking after him.  Toreno needs Sweet alive as much as you do - apparently.  After that last bit of work, there's a price on your head.  Toreno needs you to start doing some real wet work.  Goto the abandoned airstrip and buy it.  It will cost you $80,000.  If you don't have this amount of money, go out and earn it.  Once you have purchased the property, go into the office where you will see a red marker.  Walk into it, and you'll recieve a phonecall from Toreno.  You are going to have to learn to fly.  Toreno has set out a series of tests for you.  Access these tests via the television in front of you.  You must prove that you know how to fly, if you are to continue working towards your brother's freedom.  You must obtain a score of 70% or above to pass each test.  For each test you pass, your flying skill is upgraded (that is, if you haven't already got 100% flying skill).  Walk into the red marker to begin.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert017.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert017_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert018.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert018_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert019.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert019_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert020.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert020_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="learningtofly"></a>Learning to Fly</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Here are the requirements for each award:</p>
+
+<table class="newsquote" width="80%" align="center">
+   <tr><td colspan="2"><strong>AWARD GAINED</strong></td><td colspan="2"><strong>SCORE REQUIRED</strong></td></tr>
+   <tr><td colspan="2">Gold</td><td colspan="2">100%</td></tr>
+   <tr><td colspan="2">Silver</td><td colspan="2">85% - 99%</td></tr>
+   <tr><td colspan="2">Bronze</td><td colspan="2">70% - 84%</td></tr>
+   <tr><td colspan="2">No Award</td><td colspan="2">0% - 69%</td></tr>
+            <tr><td colspan="4" align="center"><strong>COMPARISON: TIMES AND PERCENTAGES</strong></td></tr>
+    <tr><td><a href="#takeoff">Takeoff</a></td><td>70% = 45 sec</td><td>85% = 37.5 sec</td><td>100% = less than 30 sec</td></tr>
+    <tr><td><a href="#landplane">Land Plane</a></td><td>70% = 40 sec</td><td>85% = 32.5 sec</td><td>100% = less than 25 sec</td></tr>
+    <tr><td><a href="#circleairstrip">Circle Airstrip</a></td><td>70% = 75 sec</td><td>85% = 67.5 sec</td><td>100% = less than 60 sec</td></tr>
+    <tr><td><a href="#circleandland">Circle Airstrip and Land</a></td><td>70% = 95 sec</td><td>85% = 87.5 sec</td><td>100% = less than 80 sec</td></tr>
+    <tr><td><a href="#helitakeoff">Helicopter Takeoff</a></td><td>70% = 60 sec</td><td>85% = 52.5 sec</td><td>100% = less than 45 sec</td></tr>
+    <tr><td><a href="#landheli">Land Helicopter</a></td><td>70% = 45 sec</td><td>85% = 37.5 sec</td><td>100% = less than 30 sec</td></tr>
+    <tr><td><a href="#destroytargets">Destroy Targets</a></td><td>70% = 105 sec</td><td>85% = 92.5 sec</td><td>100% = less than 80 sec</td></tr>
+    <tr><td><a href="#looptheloop">Loop the Loop</a></td><td>70% = 27 sec</td><td>85% = 24 sec</td><td>100% = less than 21 sec</td></tr>
+    <tr><td><a href="#barrelroll">Barrel Roll</a></td><td>70% = 23 sec</td><td>85% = 20.5 sec</td><td>100% = less than 18 sec</td></tr>
+    <tr><td><a href="#parachute">Parachute onto Target</a></td><td>70% = 70 sec</td><td>85% = 62.5 sec</td><td>100% = less than 55 sec</td></tr>
+</table>
+
+<ul>
+<li><a name="takeoff"></a><strong>Takeoff</strong><br>
+Press and hold 'X' to accelerate along the runway.  Just as the plane's tail begins to rise, pull back on the left analog stick to lift the nose, and take off.  As soon as you take off, press R3 to retract the landing gear. [Do not take your finger off the 'X' button.  The only thing you need to do is move the left analog stick up or down, do not move it from side to side or you will create problems for yourself.  When you move the left analog stick, move it very slowly or you risk losing control of the plane] Fly towards the first corona at a steady speed.  Go through it, and slowly adjust the analog stick to point the nose downwards.  Fly through the second corona, and again, <i>slowly</i> adjust the left analog stick to point the nose upwards.  Fly through the third and final corona to complete the test.  Your overall% is based on the time it took to complete.  Remember, you only need 70% or above to pass.  Press 'X' to continue.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool01.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool01_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool02.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool02_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool04.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool04_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_takeoff.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_takeoff.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="landplane"></a><strong>Land Plane</strong><br>
+As soon as you gain control of the plain, press R3 to lower the landing gear.  Move steadily downwards and go through the corona.  Press and hold 'Square' to decellerate, and do not touch the ground until you are at a very slow speed.  Time it so that you land in or near the red marker.  If you are slightly off-course, don't scramble or you will gain damage points.  Your overall score is based on 3 factors: Your final position score, your damage penalty and the time taken.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool03.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool03_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool05.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool05_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool06.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool06_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_land_plane.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_land.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="circleairstrip"></a><strong>Circle Airstrip</strong><br>
+You are given the option of flying clockwise or anti-clockwise.  Clockwise would be the more sensible choice.  Use the skills you learned in the first test to take off - hold 'X' to accelerate along the runway and pull back on the left analog stick as the tail rises, to take-off.  The main thing to remember is that you are flying around in a huge circle.  Do <b>not</b> fly in straight lines towards each corona, but instead fly in a large circular movement.  If you imagine the route as being a huge circle you shouldn't have to worry about the location of the next corona, as you can "predict" where it is going to be.  Your overall score is based on 2 factors - the time taken and your damage penalty, if any.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool07.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool07_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool08.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool08_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool09.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool09_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_circle_airstrip.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_circle.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="circleandland"></a><strong>Circle Aistrip and Land</strong><br>
+Again, select clockwise and repeat the steps in the previous test.  This time, however, you must land after flying through the final corona.  As you near the final corona, bank left (slightly) and use the skills you learned in test-two to land the plane in the red marker.  Your overall score is based on 3 factors - the time taken, your final position score and your damage penalty, if any.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool10.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool10_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool11.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool11_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool12.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool12_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_circle_and_land.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_circleland.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="helitakeoff"></a><strong>Helicopter Takeoff</strong><br>
+Before doing anything, let the blades spin until they are as fast as they can possibly go.  Press and hold 'X' to accelerate upwards.  A message will appear on-screen asking you to release 'X', to level off.  Rotate the helicopter 180 degrees by holding L2 or R2.  Push the left analog stick forward slightly to point the nose down 45 degrees.  Follow the yellow blip on the radar.  Keep the nose pointed forwards, and vary between the 'Square'and 'X' buttons, so that you maintain a good speed without going too high.  Fly through the corona to complete the test.  Your overall score is based on 2 factors - the time taken and the damage penalty, if any.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool13.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool13_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool14.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool14_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool15.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool15_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_helicopter_takeoff.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_helitakeoff.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="landheli"></a><strong>Land Helciopter</strong><br>
+Use the skills you learned in the previous test to fly towards the red marker.  Pull the left analog stick back and tap 'Square' repeatedly as you approach, to decellerate.  Land in the middle of the red marker.  Your overall score is based on the time taken, your final position and your damage penalty.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool16.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool16_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool17.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool17_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool19.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool19_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_land_helicopter.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_heliland.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="destroytargets"></a><strong>Destroy Targets</strong><br>
+Use the skills you have learned to fly towards the 3 vans at the end of the airstrip.  Don't fly too low, or you will miss the targets completely.  Tap 'Square' repeatedly as you approach the targets, and begin firing rockets (using 'Circle).  Fire as many as you can, and as quickly as you can, and destroy the 3 vans.  Quickly turn 180 degrees (using L2) and fly towards the <i>moving</i> vans.  Again, slow down as you approach and begin firing as quickly as you can.  Destroy both targets and again, turn 180 degrees, and head back to the airstrip.  Land in the red marker.  Your overall score is based on the time taken, your final position score and the damage penalty.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool18.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool18_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool20.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool20_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool22.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool22_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_destroy_targets.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_destroy.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="looptheloop"></a><strong>Loop the Loop</strong><br>
+Hold 'X' to maintain height and speed.  As soon as you pass through the corona, pull back on the left analog stick to perform a loop.  Push forward on the left analog stick just <i>before</i> you level off and go through the second corona.  Your overall score is based on the time taken and the damage penatly, if any.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool21.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool21_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool23.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool23_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool25.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool25_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_loop_the_loop.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_looptheloop.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="barrelroll"></a><strong>Barrel Roll</strong><br>
+Hold 'X' to main height and speed.  As soon as you pass through the first corona, push the analog stick left to perform a barrel roll.  The nose <b>must</b> be pointed slightly upwards before attempting the barrel roll, otherwise you will heard straight towards the ground.  Level off and pass through the second corona.  Your overall score is based on the time taken and the damage penalty.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool24.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool24_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool27.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool27_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool26.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool26_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_barrel_roll.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_barrelroll.jpg" alt="IMAGE"></a></td></tr></table></center></li>
+
+<li><a name="parachute"></a><strong>Parachute onto Target</strong><br>
+Let CJ fall for about 10 seconds.  Then push the left analog stick forward to accelerate.  A message will appear on-screen, telling you to release the parachute.  Do so, as soon as this message appears (press 'Circle').  Pull back on the left analog stick to move forward rapidly.  Time it so that you land in the middle of the red marker.  Your overall score is based on the time taken, and your final position score.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool28.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool28_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool29.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool29_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool30.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/flightschool/flightschool30_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/files/videos/fschool_parachute_onto_target.wmv" target="_blank"><img src="http://media.gtanet.com/images/fschool_parachute.jpg" alt="IMAGE"></a></td></tr></table></center></li></ul>
+<br><i>Respect +</i>
+<br><blockquote><b>*Woozie calls.  Go and see him at his new place of work, he has a bussiness proposition for you.  He's at the Four-Dragons Casino in Las Venturas.</b></blockquote>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="noe"></a>N.O.E</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Toreno catches you by surprise.  He's got some guys out in a field that need some equipment.  If they don't get it, they'll be dead by nightfall.  Toreno can't do it himself because he has 5 people watching him at all times - one DEA, one FBI, a Russian, a Cuban double agent and Toreno's paymasters.  You're not ready yet, so you must stay low on the radar.  The plane is loaded and ready to go, so get inside.  Take off, and raise the landing gear.  Toreno tells you to use the canyon as cover, but instead, fly towards the water and stay low.  A timer appears on-screen, and you have 10.00 minutes to complete the mission.  A visibility bar appears on screen, and the longer you fly above the radar limit, the more it increases.  The plane can get pretty fast, which will put you off if you go below the radar limit.  Tap 'Square' repeatedly to decellerate, so that you can regain full control of the rustler.</p><p>When you reach Angel Pine, fly through the corona to trigger the drop, and make your way back to the airstrip.  Lower the landing gear and land the plane, to complete the mission.<br><br><a href="../screenshots/gallery.php?image=1327" target="_blank">» Map</a><br><br><i>$15000</i><br><blockquote><b>*Catalina makes another prank call.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert021.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert021_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert022.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert022_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert023.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert023_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert024.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert024_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="stowaway"></a>Stowaway</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Some traitors from another department think they can help the 'overseas situation' by financing militaristic dictators in exchange for arms contracts.  They've stolen a consignment of lands mines and plan to offload them in the middle east.  One of Toreno's associates has given you the go-ahead to kill them.  'Them', as in government agents.  Get on the bike, and the pilot will immediately spot you.  The plane stops loading cargo, and attempts an escape (with the cargo-ramp still down).   Speed towards the ramp.  Ignore the shootists up-ahead, and keep focused on the plane.  Some of the cargo falls out of the plane, so drive slightly towards the right, so as to avoid them.</p><p>Once you're trapped on board, a barrel is seen sweeping your bike out the back of the plane.  Duck into the left, and wait until all of the barrels have rolled out the plane.  There are some guards up ahead.  Shoot at each of them <b>once</b>, or use your fists - if you shoot too many times, you may shoot the cargo causing the plane to explode.  Kill the guard with the parachute, and swipe it.  Throw a satchel, and escape the same way you came in.  You have 20 seconds before the plane explodes.<br><br><i>$20000</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert025.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert025_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert026.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert026_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert027.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert027_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert028.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert028_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert029.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert029_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert030.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert030_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert031.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert031_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert032.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert032_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p><img src="http://media.gtanet.com/gtasa/images/truth.jpg" alt="The Truth" width="400" height="70"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="blackproject"></a>Black Project</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>You might want to save your game before this mission, as it's without a doubt one of the best in the game.  Truth is checking that you're no longer on government business (working with Toreno).  He warns you about Toreno, and goes onto explain your task.  There's a place not even on the map where the 'Black Project' is being developed.  Truth wants you to break in and collect it.  Truth takes you to the Area 69 compound, via the mothership.  You must gain entry to the research labs before sunrise (05.30).</p>
+
+<p>There are searchlights sweeping the area.  Observe their routine and plan your route around them. If you stay in a searchlight's beam for too long or shoot too many out you will be spotted and the control tower will lock down the facility. This will force you to find an alternative route in. There are also several military personnel patrolling the area. Use the thermal goggles that The Truth gave you to help you see them in the dark. You can use stealth to avoid patrols or climb to the top of a control tower and use your sniper rifle to take them out. When goggles are selected, press to toggle thermal vision on and off.</p>
+
+<p>By the time you reach the control tower, you'll be spotted one way or another and the searchlights will change to tracking mode.  Chances are the blast doors will have shut by the time you get there, so goto the vent (yellow blip on the radar) and shoot it.  Drop down into the vent, and make your way towards the Area 69 interior.  There's also a health pickup in the vent, if you need one.</p>
+
+<p>Make your way through Area 69 to the research lab which will give you access to the black project.  There are several military personnel on patrol throughout the installation.  The control room will allow you to deactivate some of Area 69's exterior defenses, which will aid your escape.  The guards are represented by the red blips on the radar.  The blips point in the direction that the guards are facing.  Use this information to observe their route, and kill them.  When you enter the research lab, head in a north easterly direction for aslong as possible, and then turn left.  Follow the path and continue moving towards the 'Black Project'.  Pickup the ID card and walk into the red marker, to gain access to the launch bay, where the Black Project is being stored.  There are guards everywhere as you move down the stairs.  Leave no survivors.  At the very bottom of launch bay, lies the Black Project - a $60,000,000 project - yes, a jetpack!  Walk into the jetpack.  Keep your finger on 'X' to accelerate.  More guards will shoot as you exit the compound.  Use the left analog stick to move forward, and get the jetpack back to Truth.</p><blockquote><b>*After the mission, Truth calls.  You've got a date with destiny, apparently.  Go and see him.</b></blockquote><b>Note:</b> There are several ways to explore Area 69 <b>after</b> completing this mission.  Get the jetpack and goto the Vinewood mansion (the one that is available for purchase).  Go round the back, to the swimming pool, and find the weak section on the wall.  Walk into it whilst using the jetpack, and let yourself sink for a moment or two.  You'll now appear "under" the city.  Use your pause-menu map as a guide and fly to Area 69 with the jetpack.  You will gain a 5 star wanted level when you get there.  Go under the interior with the jetpack and fall for about 60 seconds (take your hands off the controller completely).  You are automatically taken into the Area 69 interior, and you are free to explore it.  To get rid of the cops, enter the 'Never wanted' cheat:<center><img src="http://media.gtanet.com/gtasa/images/cheats/12.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/2.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/12.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/2.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/1.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/10.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/9.gif" alt="IMAGE"> <img src="http://media.gtanet.com/gtasa/images/cheats/3.gif" alt="IMAGE"></center><br>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert033.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert033_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert034.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert034_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert035.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert035_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert036.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert036_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert037.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert037_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert038.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert038_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert039.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert039_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert040.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert040_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert041.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert041_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert042.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert042_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert043.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert043_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert044.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert044_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="greengoo"></a>Green Goo</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Truth wants you to take the jetpack, land on a train, kill the guards and take whatever they least want you to get.  He can't fly the jetpack at all, so you'll have to do it.  Take the jetpack and fly towards prickle pine, where the train is located.  You cannot take off the jetpack until the mission is complete.  The guards will shoot as you approach the train.  You can shoot from above whilst using jetpack - press R1 to aim and 'Circle' to shoot.  You can also steady yourself by holding L2 and R2 at the same time.  Land on the back of the train, and kill any guards that get in your way.</p><p>There are 3 crates on the train, and one of them contains the 'green goo'.  Make your way to the first crate and shoot it to smash it open.  The crate is empty.  Continue moving towards the front of the train, again, killing any guards that attack.  Shoot the second crate, which again has nothing in it.  The third crate contains the 'green goo' that Truth wants.  Collect the jar of green goo and take it back to Truth, at the abandoned airstrip.  Truth doesn't explain it's purpose, but he seems to know what it is.  He takes the jar of green goo and leaves via the mothership.<br><br><i>$20000</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert045.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert045_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert046.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert046_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert047.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert047_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/desert/desert048.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/desert/desert048_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="right"><a href="gta_sa_lasventuras.html">» Continue to Las Venturas Missions</a></p>
+</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="files/jquery.js"></script>
+    <script src="files/bootstrap-transition.js"></script>
+    <script src="files/bootstrap-alert.js"></script>
+    <script src="files/bootstrap-modal.js"></script>
+    <script src="files/bootstrap-dropdown.js"></script>
+    <script src="files/bootstrap-scrollspy.js"></script>
+    <script src="files/bootstrap-tab.js"></script>
+    <script src="files/bootstrap-tooltip.js"></script>
+    <script src="files/bootstrap-popover.js"></script>
+    <script src="files/bootstrap-button.js"></script>
+    <script src="files/bootstrap-collapse.js"></script>
+    <script src="files/bootstrap-carousel.js"></script>
+    <script src="files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="files/holder.js"></script>
+  
+
+</body></html>

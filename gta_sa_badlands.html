@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<head>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AHVybgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIgAAAAIhERESIAAAAhEiIhEgAAACEgAAISAAAAISACIhIAAAAhIAIREgAAACEgAiIiAAAAISAAAAAAAAAhIAAAIgAAACESIiISAAAAIhERESIAAAACIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+	<title>Gamin' Walkthroughs</title>
+	</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+	  background-color: #121212;
+      padding-bottom: 40px;
+      color: #ffffff;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="Home.html">Gamin' Walkthroughs</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Browse.html">Browse</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacts</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://www.facebook.com/pages/Gamin-walkthrough/553422758029251">Facebook</a></li>
+                    <li><a href="https://twitter.com/GameWalkthroug4">Twitter</a></li>
+					<li><a href="#">YouTube</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="files/cod.jpg" alt="Call of Duty Black Ops II">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Call of Duty Black Ops II</h1>
+              <p class="lead">A brand new Gamin' Walkthrough for Call of Duty Black Ops 2 is in progress! We have consulted and played with professional players in order to bring you the best walkthrough possible. We interviewed famous Call of Duty professional players, who had much to say about the game..</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/halo4ss.jpg" alt="Halo 4">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Halo 4</h1>
+              <p class="lead">The best Halo 4 Legendary Walkthrough is now complete! We spent many hours playing through the game to find you only the best way to play through the game. </p>
+              <a class="btn btn-large btn-primary" href="#">Walk Me Through!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/qlss.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Quake LIVE Online Guide</h1>
+              <p class="lead">We at Gamin' Walkthroughs have spent months researching to bring you the best Online Guide for Quake LIVE! Our Walkthrough covers topics from config, gamestyles, and even how to use different weapons!</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+		<div class="container">
+
+	  <h2>Grand Theft Auto: San Andreas</h2><img src="files/gta_sa_cover_art.jpg" height="400" width="200" alt="Grand Theft Auto San Andreas" >
+	  <p>"Grand Theft Auto: San Andreas is a 2004 open world action-adventure video game developed by Rockstar North in the United Kingdom and published by Rockstar Games. It is the third 3D game in the Grand Theft Auto video game franchise, the fifth original console release and eighth game overall. Originally released for the PlayStation 2 in October 2004,[2] the game has since been released for the Xbox and Microsoft Windows in June 2005, then released on the Xbox Live Marketplace for the Xbox 360 in October 2008, then released on the PlayStation Store via PSN for the PlayStation 3 in December 2012, and has received wide acclaim and high sales figures on all platforms. It is the best-selling game of all time on PlayStation 2. It was made available on Steam on January 4, 2008,[6] and on Intel-based Macs running a minimum of Mac OS X 10.6.6 in September 2011. San Andreas was released for the PlayStation 3 via PlayStation Network in December 2012. Grand Theft Auto: San Andreas was succeeded by Grand Theft Auto: Liberty City Stories and was preceded by Grand Theft Auto: Vice City.
+		The game is set in the semi-fictional state of San Andreas (based on California and Nevada), which contains three metropolitan cities: Los Santos, based on Los Angeles, San Fierro, based on San Francisco, and Las Venturas, based on Las Vegas. Set in 1992,[7] San Andreas revolves around the gang member Carl "CJ" Johnson returning home from Liberty City to Los Santos, San Andreas, after learning of his mother's murder. CJ finds his old friends and family in disarray. Over the course of the game, CJ gradually unravels the plot behind his mother's murder.
+		The high-level plot of the game is based on multiple real-life events in Los Angeles including the rivalry between street gangs the Bloods and Crips (which the player's gang and rival gang are spoofed off of), the Crack epidemic (which is shown as a major point of conflict in the game), the LAPD Rampart scandal (forming the basis of several main antagonists in the game), and the game even culminates in a spoof of the 1992 Los Angeles riots."</p>
+		*From the <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas">Wikipedia</a> page.
+
+		<p align="left"><img src="http://media.gtanet.com/gtasa/images/badlands.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="badlands"></a>Badlands</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>There's a guy hiding up Mount Chiliad that disagrees with Tenpenny and Pulaski's methods. Pulaski wants him dead, and he wants evidence from you that he isn't going to talk.  Kill the witness, and bring back proof.  Pulaski hands you a camera with an ulimited number of shots.  Hold R1 to look through the camera viewfinder.  Press L2 to zoom in, and R2 to zoom out.  Press 'Circle' to take the photo, or press L1 to take the photo AND save it to your gallery.  Grab a vehicle and head towards Mount Chiliad.  Stop in the red marker at the bottom of the mountain, and begin making your way up.  A bike (of some sort) would be the most suitable vehicle to use.  The roads going up the mountain can get very narrow and complicated, so a small, but fast vehicle such as a motorbike would be perfect.  Don't get too close to the snitches hideout, or he'll flee.  Remember, you need a photo of him in one piece, so you can't just blow him up with the rocket launcher.  Examine the area.  There are feds surrounding the hideout, and the snitch is inside.  Ignore the feds completely, there aren't many of them, and they can't do too much damage.  Drive full speed towards the hideout.  Go to the right hand side of the hideout, and round the back (still ignoring the feds, as they shoot).  Pick a weapon and kill the snitch, who should at this point be leaving the hideout.  If you can kill him before he gets into his car (which is the whole point of this method) you shouldn't have too many problems.  If he DOES manage to get into his car, you will have to chase him down the mountain.  Try and ram his vehicle over the edge of the mountain, but if thats not possible a simple drive-by should do it, causing the snitch to exit the vehicle, and from there its pretty straight-forward.  Photograph the body, and take it back to the drop.<br><blockquote><b>*Cesar calls, and explains that Los Santos is very dangerous now.  He's got backup coming out to protect you -- his cousin, really intense.  Meet them at the diner in Dillimore, over in Red County (follow the question mark "?" on the radar)</b><br><br><b>*You also recieve a phonecall from Sweet (who is currently in prison).  He is just checking up on you.  You'll hear more from him later.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands001.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands001_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands002.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands002_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands003.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands003_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands004.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands004_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="firstdate"></a>First Date</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>This is not really a mission, but more of an introduction to Catalina.  Goto the diner in Dillimore, marked with the question mark "?" on the radar.  Walk into the red marker to trigger the cutscene.  You will see Catalina, the same Catalina we saw in <a href="http://www.gta3.com.jpg" target="_blank">GTA3</a>.  She is causing a disturbance, as always.  Grab a vehicle, and listen as Catalina explains your mission(s).  She wants to take Red County for every cent its worth, so she has set 4 targets -- a liquor store in Blueberry, a bank in Palomino Creek, a gas station in Dillimore and a betting shop in Montgomery.  Each of the targets is marked with a green dollar sign ($) on the radar.  You're the driver, so you pick which one to do first.  The gas station is only just around the corner, so that would be the sensible choice.  Scroll down to the mission 'Tanker Commander' for further details.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands005.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands005_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands006.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands006_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands064.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands064_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands065.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands065_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="kinginexile"></a>King in Exile</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>This isn't really a mission, just a cutscene with Cesar and CJ.  Watch this cutscene by walking into the red marker at the trailer in Angel Pine.  Cesar and Kendl are inside, and it seems they arrived safely.  Cesar is very angry.  He wants to go back to Los Santos to cap some dope dealers and explains that the only reason he came out here was for Kendl's safety.  Cesar makes it clear what the problem is -- Big Smoke, Tenpenny and Pulaski.  CJ, still trying to get over the fact that Smoke betrayed him, defends Big Smoke.  Kendl jumps in and criticises Carl's words.  Cesar goes onto explain that Smoke sends a car out to San Fierro, and the trunk comes back full of drugs.  CJ is going to keep an eye on the highway to San Fierro, and see if he can see anything.<br><blockquote><b>*Catalina calls and complains about the lack of attention you have been paying towards her.  Go and see her, you have got banks to rob.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands015.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands015_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands016.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands016_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands017.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands017_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands018.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands018_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="firstbase"></a>First Base</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>CJ knocks on Catalina's door, but she's ignoring him, or she isn't in.  CJ is very apologetic and shouts his feelings for Catalina, just incase she is listening.  However, there is no reply.  He walks away from the house, and mutters 'stupid bitch'.  Suddenly Catalina attacks him from behind and holds a gun to his head.  CJ begs for his life, and to prove how sorry he is, he says they are going to play rough, and rob banks, and she can kill whoever she wants to kill.  Catalina says she loves him.  Earlier on, Catalina set 4 soft targets -- a liquor store in Blueberry, a bank in Palomino Creek, a gas station in Dillimore and a betting shop in Montgomery.  One of them should be done at this point, with 3 remaining.  If you followed the advice given earlier in the walkthrough, you should have dollar signs on your radar at the liquor store in Blueberry, the bank in Palomino Creek and the betting shop in Montgomery.  These missions are relatively easy, so just pick the mission that is closest.  That would be the liquor store in Blueberry, so head off there.</p>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands020.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands020_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands021.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands021_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands022.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands022_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands023.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands023_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="gonecourting"></a>Gone Courting</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Go and see Catalina, you have got banks to rob!  CJ knocks on the door, and Catalina's voice can be heard.  She tells him to come inside.  CJ goes in, and from there-on it's a bunch of loud screams and ow's, as Catalina tortures him.  There are two robbery locations remaining, represented by the Green Dollar "$" signs on the radar.  If you've been following this walkthrough since the start, you should have a green dollar sign at the bank in Palomino Creek, and the betting shop in Montgomery.  The betting shop offers a larger reward, and is slightly less challenging than the bank robbery in Palomino Creek, so that may be the most suitable choice.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands028.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands028_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands029.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands029_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands030.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands030_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands031.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands031_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="madeinheaven"></a>Made in Heaven</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>This is the final cutscene mission for Catalina.  This time she is angry, very angry.  Apparently she has had enough of you and from now on you're simply her business parter.  She's not in a good mood today, so anybody that messes with her is going to get killed, including you.  By this point you should have 1 dollar sign on the radar, marking the last robbery location.  If you took the advice earlier, you should be left with the bank in Palomino Creek, so head off there.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands036.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands036_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands037.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands037_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands038.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands038_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands039.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands039_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="wuzimu"></a>Wu Zi Mu</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Cesar arrives late, apparrently he didn't know when the race was starting.  Wu Zi Mu, a San Fierro businessman, introduces himself.  He explains that they like to race out in the country for cash rewards or pink slips - the racers choice.  He wishes you luck (Note: You'll see Claude in the background, the main character in Grand Theft Auto 3).  This is without a doubt the easiest race in the game, much easier than High Stakes, Lowrider, and even that was easy.  I highly recommend using the Rancher.  It's big, it's sturdy, and it's slow.  Ironic, yes, because Cesar said it was all about fast cars, but speed is the main cause of accidents in this mission.  Although the other racers look as if they're driving full speed, trust me, they are not.  Take your time, and turn corners slowly to prevent the car from flipping or diving into the water because you missed a bridge.  You should finish well in front of the other 3 racers.  You need to finish in 1st place to pass this mission.  Wu Zi Mu will congratulate you, and comment on your driving skill.  Local police don't appreciate this sport, so he'll need to leave shortly.  Woozie hands you his card, and tells you to visit him if you ever find yourself in San Fierro.  The sound a police car is heard in the background, and Woozie leaves.<br><br><i>$5000</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands044.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands044_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands045.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands045_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands046.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands046_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands047.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands047_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="farewellmylove"></a>Farewell, my love...</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Goto the red marker at the 'cV' (Cesar Vialpando) icon on the radar, in The Panopticon.  Catalina pulls a cane out of a car trunk, and kisses her new lover.  She is very angry at Carl, because by the looks of things he prefers the curves of a car to those of a real woman.  When she said she wanted to be business partners, she meant that she loves you, and when she said that she isn't interested anymore, she meant that she loves you.  But it's too late now, and she tries to make Carl jealous by introducing him to her new boyfriend, Claude (the main guy from Grand Theft Auto 3).  It's time to race.  This time, you can't choose a vehicle.  You're given a ZR-350, and you must finish 1st place to complete the mission.  Again, this race is relatively simple.  Take your time, especially when turning corners.  To be honest, it's hardly a 'race' - just a nice ride through the country.  When the race is over, Catalina says you had the unfair advantage.  She hands you the deed to a garage in San Fierro - Claude needs his car so that him and Catalina can goto Liberty City.  That's the last you will be seeing of Catalina.<br><blockquote><b>*Truth calls.  He's got your stuff, so go and see him.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands048.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands048_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands049.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands049_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands050.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands050_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands051.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands051_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands052.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands052_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands053.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands053_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands054.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands054_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands055.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands055_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/catalina.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="tankercommander"></a>Tanker Commander</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>This involves robbing a gas station in Dillimore.  Stop in the red marker, and watch as Catalina attempts to rob the place.  She points a gun at the window, and tells them to hand over the cash.  There are two men inside.  One wants to hand over the cash, but the other refuses to lose another job because of some crazy ass bitch.  He tells Catalina that the glass is bulletproof, and that he won't be giving her any money.  Change of plan -- Catalina wants to steal the tanker.  Get in the cab with Catalina, and position it in front of the tanker.  The cab and the tanker must be aligned perfectly.  Slowly back into it, to attach the cab to the trailer.  However, the owner is determined to fight back and keep his job.  They get in a car, and chase.  Catalina knows somebody who will pay for this rig and its cargo, so follow the blip on the radar.  Keep focused on your destination and don't pay too much attention to the chasers.  A health bar appears for the tanker.  Drive out of the gas station, go across the little road in front and turn right.  Go straight forward until you reach a dead end and the only option you have is to turn left or right.  Turn left, and the stop is at the bottom of the hill.  You must take great care whilst driving the tanker, so as not to detach the trailer or topple it.  Turn corners slowly, and don't make them too sharp (if your turn is too sharp, the tanker will detach and the mission is failed.  If necessary, drive across the grass when you reach a corner to keep the tanker as straight as possible).  Catalina makes the deal with Mr. Whittaker, before heading off on a bike.  Mission complete.  The trucker missions are now unlocked.<br><br><a href="../screenshots/gallery.php?image=1644" target="_blank">&raquo; Map</a><br><br><i>$5000</i><br><blockquote><b>*You recieve a phone call from somebody called The Truth.  CJ has no idea who he is, but he explains that they both have the same friend and business partner -- Officer Tenpenny.  Truth has a room in a motel in Angel Pine, go and see him sometime.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands007.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands007_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands008.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands008_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands009.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands009_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands010.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands010_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="againstallodds"></a>Against All Odds</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>This involves robbing the betting store in Montgomery.  Stop in the red marker outside the betting shop and Catalina will give you satchel charges.  Enter the betting store and Catalina will hold a gun towards the staff.  One of the staff pushes the alarm after Catalina warned her not to.  She's now history.  Catalina orders you to blow the door open, in order to gain access to the safe.  Press 'Circle' to throw the satchels and hold it for longer to increase the throwing distance.  Throw about 2 or 3 satchel charges onto the door, and stand well back from it.  Flick through your weapons until you reach the detonator, and press 'Circle'.  The door will blast open, and you now must do the same to blow the safe open.  This will only require one satchel.  Once the safe is open, CJ will take the cash, and a 4-star wanted level appears.  Get some wheels, head to the pay n' spray marked on the radar (keep an eye out for the police bribe under the Montgomery intersection) and get back to Catalina's hideout.<br><br><i>$2000</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands040.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands040_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands041.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands041_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands042.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands042_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands043.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands043_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="localliquorstore"></a>Local Liquor Store</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>It seems that some other robbers got there first, and they're getting away with your money!  Catalina shoots one of them off of his quadbike, as they try to escape.  Get on the quadbike with Catalina, and she'll shoot from behind.  Chase the 3 robbers.  You can help Catalina by shooting forwards on the quadbike, by pressing 'Circle'.  Use the L2 and R2 buttons to look left and right.  Once you have shot the first robber off of his quadbike, a green blip is marked on the radar representing the briefcase full of cash.  Leave the briefcase for now, and chase the other 2 robbers.  Once all of the robbers are dead, go back and collect the briefcases.  Return to the hideout and stop in the red marker.  Carl tells Catalina that he desperately needs money.  Catalina promises that they will rob a real bank next time.<br><br><i>$1000</i><br><blockquote><b>*Cesar calls and says that he has been busy racing.  He's talking about street racing, not beautiful cars, but fast cars.  Street racers meet out in the countryside for cash.  Get a fast car and meet Cesar and Kendl south of Montgomery.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands032.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands032_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands033.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands033_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands034.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands034_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands035.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands035_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="smalltownbank"></a>Small Town Bank</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Time to rob a real bank.  Stop in the red marker at the bank in Palomino Creek.  CJ and Catalina threaten the staff with guns, and Catalina demands that they hand over the cash.  She's going to empty the safe.  Meanwhile, keep the staff covered.  Point your gun at the staff to keep them scared and under control.  Common sense tells us that we can't aim at 4 people at the same time, so one of the staff will reach for the alarm, and all hell breaks loose.  The local police are contacted, and make their way to the robbery scene.  2 police bikes and a rancher park outside.  Smash the ATM's and get as much cash as possible (each ATM requires 2 rifle shots).  Once all 3 ATM's have been destroyed, follow Catalina through the back door.  You'll gain a 2-star wanted level, and some cops attack.  Kill all of the cops with Catalina, and 2 more police bikes will enter via the alleyway.  Shoot both of the cops, and grab a bike.  Keep up with Catalina as you race through the countryside.  Eventually Catalina comes to a stop, and she is surrounded by officers.  Protect Catalina, and take her home.  During the journey home, CJ says she needs to calm down.  Catalina explains that he knows nothing about the female heart, and that he's to go back and see her when he <i>does</i> know something.<br><br><i>$1000</i><br><blockquote><b>*Catalina calls.  She wants to see you immediately.  If you've already done two of Catalina's missions then you don't have to.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands024.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands024_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands025.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands025_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands026.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands026_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands027.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands027_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/truth.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="bodyharvest"></a>Body Harvest</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Walk into the red marker at the motel in Angel Pine, and a cutscene will begin.  Tenpenny is stoned, he has become dillusional.  He introduces you to Truth, who will be supplying you with some of the finest weed.  Truth enters the room, and Tenpenny explains that Carl will be paying Truth the money for his weed.  Tenpenny leaves, and Truth has a job for you.  Some farmers across town have a combine harvester, and Truth needs one.  Get it and you can pay Truth.  The combine is located at "The Farm", which unfortunately is half way across the countryside.  This is however, a good time to increase your driving skill.  Follow the yellow blip on the radar, and walk into the red marker.  The combine harvester is located at the field towards the back of the farm.  There are several groups of survivalists working and they will not take kindly to strangers.  There is one farmer towards your left, and he carries a rifle.  Take him out from a distance, and continue moving into the farm.  Two farmers on tractors will move towards you, and repeatedly run you down.  If you shoot at the tractors they will eventually blow up, but you risk losing a lot of health using this method.  Instead, pull the farmers out of the tractors and kill them from there.  There's another few farmers up ahead at the turn, and another few in the field where the harvester is located.  As you approach the combine, the driver will flee.  Enter the combine, and exit the field by heading west and following the dirt path.  Some more angry farmers greet you as you exit the field.  Simply drive over any attackers and the combine harvester will slice them.  Take the harvester back to Truth's farm.  As you leave the farm, a car with some angry farmers will chase.  Get out of the harvester and kill the farmers, to avoid any damage to the harvester itself.  Turn left and take the first right.  Drive down to the dirt path until you reach Truth's farm, and stop in the red marker.  A cutscene begins, and Truth says he will call you when the stuff is ready, so make sure you have the cash.<br><br><i>Respect +</i><br><blockquote><b>*Cesar calls and reveals that the Varios Los Aztecas have gone down.  Respect, loyalty and honour mean nothing in Los Santos anymore.  CJ orders him to take Kendl out of Los Santos, and rent a trailer at Angel Pine.  Go and see Cesar at Angel Pine.  There's a BF Injection at Truth's farm that you can use to get there.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands011.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands011_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands012.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands012_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands013.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands013_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands014.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands014_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center> 
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="areyougoingtosanfierro"></a>Are you going to San Fierro?</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></table><br>
+
+<p>Truth has a green village up in the hills - go and see him.  Carl hands over the cash, and collects the goods from the mothership.  Suddenly there's a loud noise.  It's a police chopper.  Truth grabs 2 flamethrowers, and hands Carl one.  Go and help Truth destroy the weed.  Hold R1 to aim with the flamethrower, and destroy all the weed (represented by the red blips on the radar).  You have 5.30 minutes (5.30 game hours) to burn everything before the cops arrive.  Because of the drugs, Carl will become dizzy and it becomes increasingly difficult to burn the weed.  Truth gets the mothership fired up, and ready to go.  Once all of the weed has been burned, go and speak to Truth.  He hands you a rocket launcher, to take out the chopper.  Get a couple of shots in at the chopper after the cutscene, but if you miss, follow it to the end of the road where Truth will stop.  Once the chopper has been struck, stand well away from the explosion.  Get in the mothership and drive to the garage (Truth hasn't driven in 15 years) that you won in San Fierro.  CJ calls Cesar during the journey, and tells him to meet at the garage.  You discover that the garage is infact run-down, and basically of no use to you.  Stop in the red marker, to complete the mission.  You can now save your progress in San Fierro.  We're back into the city, baby.<br><br><i>Respect +</i><br><blockquote><b>*Cesar calls, and he's been doing a little research.  Every Monday and Friday cash leaves Los Santos for San Fierro, and every Wednesday and Saturday a courier takes the yay back to Big Smoke.  Keep an eye out.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands056.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands056_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands057.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands057_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands058.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands058_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands059.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands059_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands060.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands060_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands061.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands061_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands062.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands062_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands063.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/badlands/badlands063_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="right"><a href="gta_sa_sanfierro.html">&raquo; Continue to San Fierro Missions</a></p>
+
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="files/jquery.js"></script>
+    <script src="files/bootstrap-transition.js"></script>
+    <script src="files/bootstrap-alert.js"></script>
+    <script src="files/bootstrap-modal.js"></script>
+    <script src="files/bootstrap-dropdown.js"></script>
+    <script src="files/bootstrap-scrollspy.js"></script>
+    <script src="files/bootstrap-tab.js"></script>
+    <script src="files/bootstrap-tooltip.js"></script>
+    <script src="files/bootstrap-popover.js"></script>
+    <script src="files/bootstrap-button.js"></script>
+    <script src="files/bootstrap-collapse.js"></script>
+    <script src="files/bootstrap-carousel.js"></script>
+    <script src="files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="files/holder.js"></script>
+  
+
+</body></html>
