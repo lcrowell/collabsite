@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<head>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AHVybgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIgAAAAIhERESIAAAAhEiIhEgAAACEgAAISAAAAISACIhIAAAAhIAIREgAAACEgAiIiAAAAISAAAAAAAAAhIAAAIgAAACESIiISAAAAIhERESIAAAACIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+	<title>Gamin' Walkthroughs</title>
+	</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+	  background-color: #121212;
+      padding-bottom: 40px;
+      color: #ffffff;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="Home.html">Gamin' Walkthroughs</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Browse.html">Browse</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacts</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://www.facebook.com/pages/Gamin-walkthrough/553422758029251">Facebook</a></li>
+                    <li><a href="https://twitter.com/GameWalkthroug4">Twitter</a></li>
+					<li><a href="#">YouTube</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="files/cod.jpg" alt="Call of Duty Black Ops II">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Call of Duty Black Ops II</h1>
+              <p class="lead">A brand new Gamin' Walkthrough for Call of Duty Black Ops 2 is in progress! We have consulted and played with professional players in order to bring you the best walkthrough possible. We interviewed famous Call of Duty professional players, who had much to say about the game..</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/halo4ss.jpg" alt="Halo 4">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Halo 4</h1>
+              <p class="lead">The best Halo 4 Legendary Walkthrough is now complete! We spent many hours playing through the game to find you only the best way to play through the game. </p>
+              <a class="btn btn-large btn-primary" href="#">Walk Me Through!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/qlss.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Quake LIVE Online Guide</h1>
+              <p class="lead">We at Gamin' Walkthroughs have spent months researching to bring you the best Online Guide for Quake LIVE! Our Walkthrough covers topics from config, gamestyles, and even how to use different weapons!</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+	<div class="container">
+
+	  <h2>Grand Theft Auto: San Andreas</h2><img src="files/gta_sa_cover_art.jpg" height="400" width="200" alt="Grand Theft Auto San Andreas" >
+	  <p>"Grand Theft Auto: San Andreas is a 2004 open world action-adventure video game developed by Rockstar North in the United Kingdom and published by Rockstar Games. It is the third 3D game in the Grand Theft Auto video game franchise, the fifth original console release and eighth game overall. Originally released for the PlayStation 2 in October 2004,[2] the game has since been released for the Xbox and Microsoft Windows in June 2005, then released on the Xbox Live Marketplace for the Xbox 360 in October 2008, then released on the PlayStation Store via PSN for the PlayStation 3 in December 2012, and has received wide acclaim and high sales figures on all platforms. It is the best-selling game of all time on PlayStation 2. It was made available on Steam on January 4, 2008,[6] and on Intel-based Macs running a minimum of Mac OS X 10.6.6 in September 2011. San Andreas was released for the PlayStation 3 via PlayStation Network in December 2012. Grand Theft Auto: San Andreas was succeeded by Grand Theft Auto: Liberty City Stories and was preceded by Grand Theft Auto: Vice City.
+		The game is set in the semi-fictional state of San Andreas (based on California and Nevada), which contains three metropolitan cities: Los Santos, based on Los Angeles, San Fierro, based on San Francisco, and Las Venturas, based on Las Vegas. Set in 1992,[7] San Andreas revolves around the gang member Carl "CJ" Johnson returning home from Liberty City to Los Santos, San Andreas, after learning of his mother's murder. CJ finds his old friends and family in disarray. Over the course of the game, CJ gradually unravels the plot behind his mother's murder.
+		The high-level plot of the game is based on multiple real-life events in Los Angeles including the rivalry between street gangs the Bloods and Crips (which the player's gang and rival gang are spoofed off of), the Crack epidemic (which is shown as a major point of conflict in the game), the LAPD Rampart scandal (forming the basis of several main antagonists in the game), and the game even culminates in a spoof of the 1992 Los Angeles riots."</p>
+		*From the <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas">Wikipedia</a> page.
+	<br>
+	<br>
+
+<table><tbody><tr><td>Welcome to Las Venturas -- gambling capital of the world!  Woozie is trying to setup a casino business, but it's proving difficult as the mob try and sabotage his plans.  He'll need your assistance.<br><br>Also in this chapter, we re-meet C.R.A.S.H, whom we haven't seen for a long time now.  Tenpenny and Pulaski's little side business is now clearly in danger, so they're laying low in Prickle Pine.  The more enemies they kill, the more enemies they make, and as a result, the more enemies they <b>need</b> to kill.  The C.R.A.S.H team is now clearly corrupt, and Tenpenny needs you to kill an agent who is threatening to expose his methods.  First, however, go and see Woozie at the Four Dragons Casino.</td><td><a href="http://www.gtasanandreas.net/screenshots/gallery.php?image=2221" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/t_2221.png" width="150" height="113" class="contentimage" alt="IMAGE"></a></td></tr></tbody></table>
+
+<p align="left"><img src="./GTA San Andreas   Las Venturas Missions_files/woozie.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="fenderketchup"></a>Fender Ketchup</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Woozie is trying to setup a triad casino in a mafia run town.  The mafia are constantly troubling him and interrupting the casino's setup plans.  He goes onto explain that there are 3 mob families in Las Venturas, each owning a stake at Caligula's Casino.  It's run by "some whacked out lawer" (Rosenberg).  So who's causing all this trouble?  It could be any one of the families, or it could be all of them, Woozie says.  He wants to offer you a share in the casino in exchange for some help in setting it up.  Carl accepts the offer.  One of Woozie's men rushes into the office with the news that they found some thugs trying to smash one of the deliveries.  They managed to catch one of them, and he's being held downstairs.  Carl orders the Triads to tie the thug to the front of a car, and he'll meet them down there.  It's time to take a little ride..</p>
+
+<p>You must scare the thug until he tells you what mob family he is involved with.  A scare-o-meter appears on-screen.  Speed up and down the strip, and perform handbreak turns to scare him and increase the scare-o-meter.  Remember, however, that head-on collisions will kill him and the mission is automatically failed.  The faster you drive, the more you scare him.  Driving on the wrong side of the road will increase the scare-o-meter rapidly.  Do not drive onto the freeways or the cops will chase - stick to The Strip.  Once the scare-o-meter is full, the mobster will accidently reveal his connections.  He is working for the Sindacco Family, and he swears revenge.  Take Sindacco back to the Four Dragons Casino, and stop in the red marker to complete the mission.<br><br><i>$5000, Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras001.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras001_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras002.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras002_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras003.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras003_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras004.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras004_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="explosivesituation"></a>Explosive Situation</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Woozie is playing golf in the office.  His worker changes the position of the target, enabling Woozie to get a hole-in-one.  So much for being "blessed with unbelievable good fortune".  Anyway, they now know that the Sindacco's are one's responsible for cowardly attacks.  Carl suggests hitting a mafia casino -- pulling a heist.  You'll need a crew and some special equipment.  And as for explosives - Woozie says there is an open cast mine south west of the city limits.</p>
+
+<p>Goto the Hunter Quarry and walk into the red marker!  You must enter the quarry and steal the dynamite before the workers detonate it.  A timer appears on-screen and begins counting down from 2.30.  If the timer runs out, the dynamite will be detonated and the mission is failed.  Jump down into the heart of the quarry and get inside the dumper.  Use the dumper to drive over the crates (containing the dynamite), and smash them open.  When a crate has been smashed, get out of the vehicle and collect the dynamite.  There are 4 sticks of dynamite altogether.  One is being transported via a forklift.  Drive into the forklift with the dumper and it will drop the crate.  Again, drive over the crate to smash it open, and collect the stick of dynamite.  After all 4 sticks are collected, a cutscene begins.  Security is blocking the exit, so you must find an alternative route out.  Get on the bike, and follow the arrows to get out of the quarry.  Experiment with the different jumps and judge what speeds you'll have to go to move onto the next marker.  When you are out of the quaary, goto the drop point and Carl will give the dynamite to the Triad.<br><br><i>$7000, Respect +</i><br></p><blockquote><b>*The Quarry missions are now available.</b></blockquote>
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras005.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras005_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras006.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras006_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras007.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras007_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras008.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras008_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras009.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras009_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras010.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras010_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras011.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras011_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras012.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras012_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="youvehadyourchips"></a>You've had your chips</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Woozie and Carl are playing cards, when suddenly, a Triad bursts into the room explaining yet another problem.  There are 2 chips, and one is clearly a fake.  Woozie says that the Sindacco Family have a plastics factory across town, so it obviously came from there.</p>
+
+<p>Head towards the factory unit on the outskirts of town - you are going to "disturb" their operation.  The mobsters have guards watching the main entrance, so try and get in unnoticed.  As soon as you enter the compound, the mafia will see you and warn the boss.  Now is your chance, get inside the factory as quickly as you can!  The mafia will attack from all angles, so find a suitable place to take cover.  Eliminate them, and destroy the 8 injection molding machines that are scattered across the interior.  You can use auto-aim to destroy the machines.  Also, when destroying them, be sure to stay at a safe distance so as not to get involved in the explosion.  Get back to the Four Dragons Casino in one piece and stop in the red marker, to complete the mission.<br><br><i>$10000, Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras013.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras013_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras014.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras014_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras015.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras015_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras016.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras016_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="donpeyote"></a>Don Peyote</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Walk into the red marker outside the Four Dragons Casino to start this mission.  Truth calls, and he needs a favour.  He took some friends deep into the desert on a peyote safari, and woke up in a japanese bath house in Los Santos an hour ago.  He has no idea how he got there and he doesn't know where the others are.  They were brits - a band and their managers.  Truth wants you to check it out, and see if they are okay.</p>
+
+<p>Make your way to Arco del Oeste, and pickup Paul and Maccer!  Be sure to take a car with 4 doors.  When you arrive, stop in the red marker and a cutscene will begin.  We are introduced to Kent Paul (the same Kent Paul in GTA Vice City) and his friend Maccer.  Lord knows what they got upto last night..</p>
+
+<p>Take Paul and Maccer to look for the rest of the band.  They say they remembered snakes, so drive to the snake farm down the road.  During the journey, Paul says he is feeling sick and asks you to pull over.  It's not entirely necessary.. but if you'd like to see him throw up, by all means, pull over! Some rednecks attack Paul and Maccer, and a chase begins.  Take Paul and Maccer to meet Rosie (Ken Rosenberg) at Caligula's Casino in Las Venturas.  The rednecks will constantly chase and attack your vehicle, although, they won't cause much harm.  When you arrive, Paul decides it's time to take out the trash.  Help Paul and Maccer eliminate the rednecks, and watch as they goto meet Rosie.  Rosie seems mentally depressed.  Paul wants a word with him alone, and promises to call you later when he needs you.  Outside the casino, Carl calls Woozie and says he's found a way to scope Caligula's without too much suspicion.</p><br><i>Respect +</i><br><blockquote><b>*Kent Paul phones.  Rosie is in a bit of trouble.  Go and meet them at Caligula's.</b></blockquote>   
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras017.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras017_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras018.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras018_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras019.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras019_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras020.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras020_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="intensivecare"></a>Intensive Care</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Paul has persuaded Rosie to explain all of his problems to Carl, to see if he can help.  Rosie explains: he had everything -- the money, the girls, but he couldn't lay off the blow.  After coming out of rehab, he started representing the Liberty City mob (again).  The 3 mob families (Leone, Sindacco and Forelli) all own part of Caligula's, and they couldn't decide between themselves who should run the casino.  Therefore, Rosie was put forward as a neutral party and if one mob screws the other, Rosie will be killed.  So the current situation is: Johnny Sindacco is in a shock induced coma in the hospital across town.  This is a good opportunity for the Forelli's to waste him.</p>
+
+<p>Goto the hospital across town and pickup Johnny Sindacco!  Johnny Sindacco was the guy you scared in the mission 'Fender Ketchup'.  Stop in the red marker, and Carl speaks to the receptionist.  She says there must be some mistake, because Johnny Sindacco was picked up by an ambulance a short moment ago.  There are 3 ambulances driving around the city, each represented by a red blip on the radar.  One of those ambulances has Johnny Sindacco inside -- get a fast vehicle and find that ambulance before it escapes.  The ambulance with Johnny Sindacco inside is completely random (ie, if you keep re-doing the mission, it won't always be the same ambulance).  Ram the ambulance to see the driver's reaction.  A message will appear on-screen to tell you if you have hit the right one.  When you hit the correct ambulance, it will speed off with Johnny Sindacco inside.  Give chase, and ram it constantly but do not shoot the vehicle.  Eventually, two mobsters will get out of the ambulance and attack.  Waste them, and take Johnny back to the meat factory.  Two cars will chase and attack, but they shouldn't cause much harm.  Stop in the red marker and watch as two Sindacco mobsters take Johnny inside on a wheelchair.<br><br><i>$5000, Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras021.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras021_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras022.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras022_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras023.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras023_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras024.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras024_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="themeatbusiness"></a>The Meat Business</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Rosie is stoned, and he's still screwed.  Carl motivates Rosie, and makes it clear that HE is the boss. Get a car and take Rosie to the Sindacco Abatoir.  We're going to visit Johnny and win him over with some kind words during his convalescence.</p>
+
+<p>Walk into the yellow marker to enter the abatoir.  A cutscene begins, and Carl doesn't want to go any further for the obvious fact that Johnny will recognise him as the guy who put him in this poor condition.  Rosie insists that Carl come along.  Johnny's doing much better, he ate something this morning.  He comes out of his office in a wheelchair and greets Ken, but as soon as he see's Carl, he clutches his heart and falls to the ground.  The Sindacco's launch a full attack.  One mobster throws a molotov cocktail, which creates a fiery barrier between two areas of the abatoir.  Another mobster carrying a chainsaw walks towards CJ.  Kill the mobster, and any other attackers while Ken looks for a fire extinguisher.</p>
+
+<p>Rosie's healthbar appears on-screen.  Protect him and kill all of the witnesses in the abatoir.  The mobsters are shown on the radar as red blips and these blips point in the direction that the mobster is facing.  Rosie hides in the freezer.  Make sure nobody touches the switch otherwise he's locked in there for good, and whatever you do, do not follow him in.  There are various health and armor icons scattered across the abatoir.  There's a health icon back in Sindacco's office, if you need it.  Go through the stockhouse to find the exit, and again, watch out for any attackers.  A few mobsters are standing on top of the boxes, and will shoot from above.  Walk into the yellow marker to leave the abatoir, and get Rosie back to Caligula's.<br><br><i>$8000, Respect +</i><br></p><blockquote><b>*Maddogg's mission is now available.  Goto the "D" icon on the radar, to access it.</b></blockquote>   
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras025.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras025_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras026.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras026_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras027.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras027_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras028.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras028_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras029.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras029_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras030.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras030_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras031.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras031_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras032.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras032_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="fishinabarrel"></a>Fish in a Barrel</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>This isn't really a mission, just a cutscene.  CJ enters the room with Ran Fa Li where they meet Woozie.  They sign agreements and celebrate the their new partnership in the casino.<br></p><blockquote><b>*Ken calls, and he is extremely worried.  The Leone's have made their move and Salvatore has taken over Caligula's.</b></blockquote>
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras033.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras033_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras034.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras034_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras035.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras036_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras037.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras037_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="maddogg"></a>Maddogg</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>This mission can be accessed at the Royal Casino on The Strip.  A drunken Maddogg is threatening to jump off the roof, after losing all of his money in the casino.  He says it's not worth it anymore -- his manager was killed (in the mission 'Managment Issues') and somebody stole his rhyme book (in the mission 'Maddog's Rhymes').  He's attracted quite a crowd.  Steal the pickup truck and save Maddog before he jumps!  Stop in the red marker and the camera angle will switch automatically.  Move the truck back and forth according to Maddogg's position.  Keep the back of the truck lined up with Maddogg.  If you positioned it correclty, Maddogg will jump and crash into the back of the truck.  Maddog's health bar appears on-screen.  Slowly and carefully drive Maddog to the hospital across town.  Each collision reduces his chances of living.  At the hospital, Maddog says he'll need a new manager when he gets out, and you're going to be that new manager.<br><br><b>Note:</b> If Maddogg jumps before the cutscene is even finished, your save game is corrupt.  This problem is caused by using the 'Peds Riot' cheat.  The only thing you can do, unfortunately, is start a new game.<br><br><i>Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras049.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras049_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras050.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras050_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras051.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras051_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras052.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras052_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="freefall"></a>Freefall</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>We meet Salvatore, a very familiar face for those of you that played GTA3.  Maria enters the room, another very familiar face from GTA3.  She has a sandwich for Salvatore, and this is the point where they first meet.  Carl enters the scene, and explains to Salvatore how he once had the privellage of working with his son Joey in Liberty City.  Carl offers his services, and Leone seems interested.  The Forellis are sending over a crew to hit him.  The flight will arrive soon.  He was going to send down some of his boys as a little welcoming committee, but he wants to see if Carl can handle it.</p>
+
+<p>Get to Las Venturas airport and steal the dodo from the hangar!  The hitmen's plane is due to land soon.  Fly to the point marked on the radar, and intercept the plane before it lands.  Fly at a height just above the clouds.  When you reach the location, the plane is actually stopped in mid-air.  Do a 180 degree turn and fly through the red corona to trigger the cutscene.  CJ jumps onto the Forelli's jet.</p>
+
+<p>You are now inside the jet, and the camera changes to first-person.  Use L2 and R2 to take cover, and waste the 4 mobsters on-board.  The pilot isn't giving up without a fight.  Waste the pilot, and fly the plane back to Las Venturas.  Stop on the runway to complete the mission.<br><br><i>$15000, Respect +</i><br></p><blockquote><b>*If you've completed the mission 'Misappropriation', you will now recieve a phonecall from Officer Tenpenny.  He wants to meet someplace quiet so that you can hand over the dossier.  Meet C.R.A.S.H in Las Brujas (near the devil's castle) in the desert.</b></blockquote>
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras037.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras037_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras038.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras038_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras039.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras039_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras040.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras040_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras041.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras041_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras042.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras042_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras043.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras043_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras044.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras044_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="saintmarksbistro"></a>Saint Mark's Bistro</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>You might want to save your progress before starting this mission - it's quite a good one, so you'll no doubt want to replay it a few times.  Salvatore seems to be getting on well with Maria.  Paul and Rosie have been given a bit more freedom, but Maccer remains hanging upside down.  Salvatore asks if you would like to do a hit in Liberty City.  Carl agrees, but says he'll need some backup.  He asks Rosie, Paul and Maccer to join him.  Outside Caligula's, Maccer, Paul and Rosie get inside a taxi.  CJ tells them to get out of Venturas fast.</p>
+
+<p>Goto Las Venturas airport and get in the jet at the end of the runway.  Fly to Liberty City.  Don't go too high, or you will miss the trigger point -- stay just below the clouds.  When you reach Liberty City, a cutscene begins.  A taxi pulls up at the Saint Marks Bistro, and CJ gets out.  CJ enters the bistro, and a mobster says it's private function only.  "Mr. Leone says otherwise", Carl replies.  A classic shootout begins.  Kill all of Forelli's bodyguards!  There are 4 upstairs and two more will arrive soon.  Kill the other 2 downstairs, and also the 2 behind the counter.  Move into the hallway that leads down into the kitchen.  Another mobster appears from around the corner.  Kill him, and move into the kitchen.  Kill the 2 mobsters, and go into the yard at the back of the bistro.  There are more bodyguards in the yard, and Forelli is taking cover behind a barrel.  He has a red arrow above his head.  Kill Forelli and all of his bodyguards.  The camera changes, and you are automatically back inside the jet.  Fly back to Las Venturas and land, to complete the mission.<br><br><i>$20000, Respect +</i><br></p><blockquote><b>*You recieve a phonecall from Sweet.  He's convinced that he's going to be in jail for life, but Carl assures him he'll get out soon.  Sweet says he's stuck between 2 lunactics that keep trying to jump him.</b><br><br><b>*Salvatore calls and comments on the marvelous job you done at Saint Marks.  He says they should stay clear of each other for a while, otherwise people will start making connections.  He'll call soon.</b></blockquote>   
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras053.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras053_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras054.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras054_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras055.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras055_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras056.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras056_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras057.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras057_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras058.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras058_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras059.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras059_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras060.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras060_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras061.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras061_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras062.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras062_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras063.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras063_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras064.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras064_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<p align="left"><img src="./GTA San Andreas   Las Venturas Missions_files/heist.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="architecturalespionage"></a>Architectural Espionage</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Woozie is down in the basement with the lights turned off, although, he doesn't realise.  The basement is large and quiet -- perfect for planning a heist.  Woozie says you'll need a plan of Caligula's before you do anything else.</p>
+
+<p>You need a camera to photograph the blueprints of Caligula's.  Go and steal one from some of the tourists on the Strip, outside Pirates in Men's Pants.  Once you have obtained the camera, head over to the city's planning department.  The security is strict, so don't cause any trouble and do not show any of your weapons.  Once inside, go and talk to the receptionist.  Press 'right' (twice) to respond positively and gain permission to see the blueprints.  Go to the very top floor.  You can't photograph the blueprints with the guards watching, so you'll need to divert their attention.  Go downstairs and destroy the old air con units with your weapons.  The fire alarm sounds, and the building is evacuated.  That will keep the guards busy.  Go back upstairs and photograph the blueprints of Caligula's.  You automatically gain a 2 star wanted level.  Crouch, select a weapon of your choice and make your way downstairs.  There are cops at every turn you make.  When you finally reach the bottom of the stairs, choose a weapon you can run with.  More cops are preparing an attack, so quickly go through the door and run towards the exit.</p>
+
+<p>Outside, you'll gain a 4 star wanted level.  Grab a vehicle and get the blueprints back to the Four Dragons Casino.  Stop in the red marker, and CJ hands the camera to some Triads so that the pictures can be developed.<br><br><i>Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras077.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras077_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras078.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras078_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras079.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras079_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras080.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras080_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras081.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras081_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras082.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras082_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras083.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras083_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras084.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras084_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="keytoherheart"></a>Key to her Heart</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Carl presents the plan to Woozie.  The security at Caligula's consists of CCTV, key code access and a swipe card.  One of Woozie's men walks in with a package for CJ.  He see's the plan, which upsets Carl.  Woozie says he will be your first recruit.  Zero has sent a security card reader.  Now you just need the card..</p>
+
+<p>Luckily, there's always one guaranteed weak link in any security set up.  The human heart.  Goto Caligula's casino and stop in the red marker.  The croupier has a keycard and knows the code.  Follow her -- don't get too close or you will spook her and don't let her get too far infront or you'll lose her.  A spook-o-meter appears on-screen.  Follow Millie to the sex shop, and go inside.  Walk into the red marker, and a cutscene begins.  Millie is trying on some new clothes.  Benny, her "master", calls.  She's expecting to meet him at her house later on today.  After Millie leaves the shop, walk into the changing room and put on the gimp suit.  Leave the sex shop, and follow Millie home.  Park in the red marker outside her house.  Go infront of her house and look west.  Kill Benny -- the pedestrian carrying the dildo.  Go and ring Millie's doorbell.  Watch the cutscene, as Carl gets to know Millie a little bit better.</p>
+
+<p>Millie is now your girlfriend and you need to wine and dine her before she'll give you the keycard.  This may take an awful long time.  If you're not upto it, simply wait infront of her house until 12.00 and a red marker will appear.  Walk into it, and wait for Millie.  Gun down Millie, and a message will appear to say that you have killed your girlfriend.  Shortly after, Woozie calls, and Carl explains the situation.  Woozie suggests looking for the keycard in Millie's house, so do just that.  Pickup the keycard, and Woozie calls again to make sure you have it.<br><br><i>Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras085.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras085_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras086.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras086_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras087.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras087_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras088.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras088_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras089.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras089_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras090.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras090_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras091.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras091_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras092.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras092_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="damandblast"></a>Dam and Blast</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>The basement far more populated than it was last time, and CJ isn't happy about it.  CJ cannot get any co-operation because of the overcrowded basement.  He leaves, saying that he's going to shut off the city's power source.</p>
+
+<p>Goto Las Venturas airport and get in the plane at the end of the runway.  You are going to have parachute onto the dam quay.  Gain as much height as you can when flying -- you're going to have to fly above the clouds, at least.  Goto the location marked on the radar and press 'Triangle' as soon as you fly through the red corona, to parachute out of the plane.  Fall for about 5 seconds, and open your parachute.  Land on the red marker at the dam quay and a cutscene begins.  The next bit involves stealth.  There are 2 guards patrolling the area.  When the nearest guard is facing in the opposite direction, quickly run up and grab the knife that is next to the container.  Examine the guard's route and perform a stealth attack by targeting with R1 and pressing 'Circle' as you walk up behind him.  Waste both guards, and walk upto the red marker at the end of the dam qauy.</p>
+
+<p>More guards have been notified of the disturbance, and the cops are on their way.  This is all about stealth.  There are several guards patrolling the area, each represented by a red blip on the radar.  The blip faces in the direction that the guard is facing.  Go up the stairs and walk over to the first generator.  There are 5 generators altogether, each marked on the radar by a square yellow blip.  Press 'Triangle' to plant the explosives, and move onto the next generator.  Examine the route of guards and perform stealth attacks as you make your way across the interior.  Plant explosives on all 5 generators, and walk into the red marker at the end.</p>
+
+<p>The cops have arrived, and the hatch has been closed.  CJ is trapped, or so it seems.  He takes a big run, and dives into the water to lose the cops.<br><br><i>Respect +</i>  
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras093.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras093_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras094.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras094_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras095.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras095_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras096.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras096_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras097.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras097_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras098.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras098_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras099.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras099_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras100.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras100_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras101.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras101_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras102.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras102_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras103.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras103_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras104.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras104_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="copwheels"></a>Cop Wheels</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>CJ explains how the heist is going to be done.  The plan is to get as much heat on CJ as possible while the others get away with the green.  Zero talks about an armored van which casino's normally use to transport their cash, and that's what we'll need.  The armored vans are also acommpanied by police bikes - outriders.  CJ takes one of Woozie's men, to get the bikes.</p>
+
+<p>There are 4 green blips on the radar, each representing a police bike that you can steal.  The Triad is driving a packer on the Julius Thruway.  You have 12 minutes to steal the 4 police bikes and get them safely onto the back of the packer.  Some of the cops will try to get on their bikes as you approach them, so make sure you're armed and shoot them before they get away.  Get onto the freeway and catch up with the packer.  Begin to slow down as you approach it, and drive gently up the ramp to attach it to the packder.  When the cutscene begins, the bike is secured onto the packer and Carl is given the thumbs up.  Repeat this for all 4 police bikes to complete the mission.<br><br><i>Respect +</i> 
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras105.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras105_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras106.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras106_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras107.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras107_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras108.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras108_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras0109.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras109_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras110.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras110_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras111.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras111_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras112.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras112_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="upupandaway"></a>Up, Up and Away!</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Woozie's taken care of the uniforms, now all we need is that armored van.  The plan is to use a sky crane to lift the armored van to a safe place where it can be re-sprayed to include the Caligula's logo.  None of your crew are pilots, so to nobody's surprise, Carl will be doing it.  "It will be just like fighting Berkley, but much bigger!", Zero says.</p>
+
+<p>Goto the restricted area marked on the radar.  You'll need a military vehicle to get in, or, you could just use the jetpack like I did.  Kill any attackers and move towards the west of the compound.  Enter the warehouse and waste any guards.  There is a health icon and  an armor icon here, which you will no doubt need.  Move through the warehouse and kill the guard on the stairs.  The military have sent two gunships to intercept you.  Use the gun emplacement to destroy them - walk into the red marker and shoot down the two Hunter's.  Continue moving up the stairs, and eliminate all threats.  Steal the helicopter and leave the military fuel dump.  Now fly to the location of the armored van in West Venturas.  Lower the helicopter over the bank van and use it's winch to pick it up - press 'Circle'.  Fly at a reasonable height (so as not to smash the van off any buildings) and make your way over to the abandoned airstrip.  Lower the copter and press 'Circle' to release the bank van in the red marker.  Land the helicopter in the indicated zone to complete the mission.<br><br><i>Respect +</i>
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras113.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras113_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras114.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras114_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras115.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras115_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras116.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras116_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras117.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras117_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras118.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras118_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras119.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras119_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras120.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras120_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="breakingthebankatcaliuglas"></a>Breaking the Bank at Caligula's</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Time to break the bank at Caligula's.  A cutscene begins showing Zero and Woozie preparing the armored van.  They're en route to Caligula's.  Carl is automatically given a croupier's outfit, 10 gas grenades and night vision googles.  Make your way to Caligula's Casino!</p>
+
+<p>Goto the staff door.  Go downstairs and go into the backup generator room.  Throw one of the gas grenades into the ventillation grill at the back of the room.  A cutscene begins showing the two guards at the opposite end - choking, coughing and finally dying.  Go down to the security door and use Millie's swipe card to open it!  Zero blows the charges you placed at the dam, which causes the lighting to go out.  Scroll through your weapons until you reach the night vision googles, and press 'Circle'.  Head over to the service bay, where the crew are due to arrive.  The gate is locked.  Get inside the forklift and use the right analog stick to raise the gate.  The crew enter in the armored van.</p>
+
+<p>Follow Woozie's assitant to the bank, and waste any Leone attackers.  Watch as the crew plant charges on the door.  Zero announces that somebody is trying to bring the generators back up.  He blames it on Berkley, who, for some unknown reason, found out that Zero was going to be involved in today's heist.  Pickup the satchel charges beside the dead guards, and go upstairs.  Put satchels on the two generators and go back down stairs.  Use the detonator to destroy the generators.</p>
+
+<p>The door is open, and the crew gain access to the safe.  The money is taken, and Zero warns Carl of a some mafia gorilla's that are about to give them some company.  Protect the crew and waste the Leone's.  Guide the crew back to the service bay so that they can escape with the money.  The Mafia will continue to attack as you make your way through Caligula's.  Go back (wasting any attackers as you do so) and use the elevator to goto the top floor of the casino.  Eliminate the last set of guards and go onto the roof.  Climb several sections of the roof and collect the parachute.  Jump off the roof and press 'Circle'.  Try and land on the roof of The Clown's Pocket, opposite Caligula's.  Kill the swat police, and grab the police chopper.  Fly to the abandoned airstrip and land, to complete the mission.<br><br><i>$100000, Respect +</i><br></p><blockquote><b>*Salvatore calls, and he's furious at your betrayal.  He swears to kill you, your family and your grandchildren!</b></blockquote>  
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras121.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras121_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras122.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras122_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras123.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras123_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras124.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras124_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras125.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras125_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras126.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras126_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras127.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras127_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras128.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras128_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras129.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras129_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras130.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras130_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras131.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras131_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras132.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras132_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras133.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras133_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras134.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras134_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras135.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras135_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras136.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras136_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<p align="left"><img src="./GTA San Andreas   Las Venturas Missions_files/crash.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="misappropriation"></a>Misappropriation</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Tenpenny and Pulaski are making a barbeque!  One can only guess what they're cooking.  It's been a long time.. Tenpenny explains.  Things have developed since they last met.  Despite their best efforts, the gig is nearly up, and the pair may lose their badges.  CJ laughs at how edgy the officers have been, and Tenpenny replies with a punch in the stomach.  There's a ruined town out west, Aldea Malvada.  A DEA officer is meeting with an FBI agent to hand over a dossier.  Make them disappear and get the evidence dossier for Tenpenny.</p>
+
+<p>Get a sniper rifle or a rocket launcher.  Head out to Aldea Malvada, but don't go upto the target just yet - stay at a safe distance for now.  When you arrive, stand in the position shown in the screenshots below and snipe your target, or, blow up the two choppers as quickly as possible using the rocket launcher.  The agent has a red arrow above his head.  When you kill him, he will drop the dossier and more agents will try to collect the dossier and escape (via the chopper).  Kill anybody who gets in your way and snatch the dossier to complete the mission.  If the agent manages to get to his chopper, you're going to have to give a lengthy chase, but if you use my method correctly you shouldn't have to.  Use one of the chopper's to get back into town.
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras045.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras045_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras046.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras046_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras047.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras047_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras048.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras048_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="32"><img src="./GTA San Andreas   Las Venturas Missions_files/dateleft.gif" width="32" height="28" alt="IMAGE"></td><td class="date"><a name="highnoon"></a>High Noon</td><td width="17"><img src="./GTA San Andreas   Las Venturas Missions_files/dateright.gif" width="17" height="28" alt="IMAGE"></td></tr></tbody></table><br>
+
+<p>Make sure you have a sniper rifle before starting this mission.  An LSPD car pulls over, with Tenpenny, Pulaski and Hernandez inside.  Pulaski, who seems surprisingly cheerful today, collects the evidence dossier.  Carl asks if everything is cool now, when suddenly, Tenpenny pulls a spade from the hood of the car and whacks Hernandez.  It is now known that Hernandez tried to expose Tenpenny and Pulaski, but somehow Tenpenny found out.  "YOU SOLD US OUT", he screams.  The C.R.A.S.H team are now clearly corrupt, and their use for Carl seems to be at an end.  Tenpenny hands the spade over to CJ, and tells him to dig his own grave.  Pulaski is told to take care of things, whilst Tenpenny leaves to "get drunk and get laid".  He takes the dossier with him.  Whilst digging, Carl tries to persuade Pulaski that Tenpenny is just using him.  Pulaski points a gun towards CJ's head.  The shooting is interupted when Hernandez climbs to his feet and makes one last attempt to cap his corrupt partner.  Pulaski finishes him off and knocks him into his own grave, but Hernandez' gun has falls into CJ's hands..</p>
+
+<p>Pulaski (a coward) runs for his car and attempts an escape.  Here's the message you have been waiting to see for a long time - Kill Pulaski!  Quickly use the sniper rifle to puncture 2 of Pulaski's tires, and get inside the bandito.  Give chase, and watch as Pulaski makes hopeless attempts to control his vehicle.  Don't attack his car just yet.  Pulaski says that he has wanted to kill you for a long time, but Tenpenny always finds an excuse to keep you alive.  Wait until he stops talking, then pull alongside and perform a drive-by until the vehicle catches fire.  Don't let him get too far away, or he will escape.  Pulaski jumps out of the burning vehicle, and a shootout begins.  Don't mess around, Pulaski has a strong weapon and it will decrease your health quicker than you think.  Gun him down, and watch the cutscene.  Pulaski's last request is that he "f---'s your sister".  Carl finishes him off with a powerful stomp to the head.</p>
+
+<p>If you're having difficulty in the "gunning him down" stage, try ramming his vehicle off-road early on in the mission.  With any luck, he'll fall over the canyon - therefore destroying his route.  If the vehicle is in good condition after the fall, Pulaski will repeatedly drive into the wall in order to get back on his original route.  Pull him out of the vehicle, and waste him.  If the vehicle lands upside down and catches fire, Pulaski will flee and again simply gun him down.  Also, Pulaski is a poor swimmer, so you can push his car into one of the rivers, but unfortunately this method disables the final cutscene which shows CJ finishing him off.   
+
+</p><center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras065.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras065_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras066.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras066_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras067.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras067_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras068.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras068_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<center><table class="newsquote"><tbody><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras069.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras069_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras070.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras070_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras071.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras071_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras072.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras072_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras073.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras073_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras074.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras074_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras075.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras075_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lasventuras/lasventuras076.jpg" target="_blank"><img src="./GTA San Andreas   Las Venturas Missions_files/lasventuras076_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></tbody></table></center>
+
+<p align="right"><a href="gta_sa_finalmissions.html">» Continue to Final Missions</a></p>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="files/jquery.js"></script>
+    <script src="files/bootstrap-transition.js"></script>
+    <script src="files/bootstrap-alert.js"></script>
+    <script src="files/bootstrap-modal.js"></script>
+    <script src="files/bootstrap-dropdown.js"></script>
+    <script src="files/bootstrap-scrollspy.js"></script>
+    <script src="files/bootstrap-tab.js"></script>
+    <script src="files/bootstrap-tooltip.js"></script>
+    <script src="files/bootstrap-popover.js"></script>
+    <script src="files/bootstrap-button.js"></script>
+    <script src="files/bootstrap-collapse.js"></script>
+    <script src="files/bootstrap-carousel.js"></script>
+    <script src="files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="files/holder.js"></script>
+  
+
+</body></html>

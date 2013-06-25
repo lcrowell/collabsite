@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<head>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AHVybgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIgAAAAIhERESIAAAAhEiIhEgAAACEgAAISAAAAISACIhIAAAAhIAIREgAAACEgAiIiAAAAISAAAAAAAAAhIAAAIgAAACESIiISAAAAIhERESIAAAACIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+	<title>Gamin' Walkthroughs</title>
+	</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+	  background-color: #121212;
+      padding-bottom: 40px;
+      color: #ffffff;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="Home.html">Gamin' Walkthroughs</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Browse.html">Browse</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contacts</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://www.facebook.com/pages/Gamin-walkthrough/553422758029251">Facebook</a></li>
+                    <li><a href="https://twitter.com/GameWalkthroug4">Twitter</a></li>
+					<li><a href="#">YouTube</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="files/cod.jpg" alt="Call of Duty Black Ops II">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Call of Duty Black Ops II</h1>
+              <p class="lead">A brand new Gamin' Walkthrough for Call of Duty Black Ops 2 is in progress! We have consulted and played with professional players in order to bring you the best walkthrough possible. We interviewed famous Call of Duty professional players, who had much to say about the game..</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/halo4ss.jpg" alt="Halo 4">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Halo 4</h1>
+              <p class="lead">The best Halo 4 Legendary Walkthrough is now complete! We spent many hours playing through the game to find you only the best way to play through the game. </p>
+              <a class="btn btn-large btn-primary" href="#">Walk Me Through!</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="files/qlss.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Quake LIVE Online Guide</h1>
+              <p class="lead">We at Gamin' Walkthroughs have spent months researching to bring you the best Online Guide for Quake LIVE! Our Walkthrough covers topics from config, gamestyles, and even how to use different weapons!</p>
+              <a class="btn btn-large btn-primary" href="#">I want to read more!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+	
+	<div class="container">
+
+	  <h2>Grand Theft Auto: San Andreas</h2><img src="files/gta_sa_cover_art.jpg" height="400" width="200" alt="Grand Theft Auto San Andreas" >
+	  <p>"Grand Theft Auto: San Andreas is a 2004 open world action-adventure video game developed by Rockstar North in the United Kingdom and published by Rockstar Games. It is the third 3D game in the Grand Theft Auto video game franchise, the fifth original console release and eighth game overall. Originally released for the PlayStation 2 in October 2004,[2] the game has since been released for the Xbox and Microsoft Windows in June 2005, then released on the Xbox Live Marketplace for the Xbox 360 in October 2008, then released on the PlayStation Store via PSN for the PlayStation 3 in December 2012, and has received wide acclaim and high sales figures on all platforms. It is the best-selling game of all time on PlayStation 2. It was made available on Steam on January 4, 2008,[6] and on Intel-based Macs running a minimum of Mac OS X 10.6.6 in September 2011. San Andreas was released for the PlayStation 3 via PlayStation Network in December 2012. Grand Theft Auto: San Andreas was succeeded by Grand Theft Auto: Liberty City Stories and was preceded by Grand Theft Auto: Vice City.
+		The game is set in the semi-fictional state of San Andreas (based on California and Nevada), which contains three metropolitan cities: Los Santos, based on Los Angeles, San Fierro, based on San Francisco, and Las Venturas, based on Las Vegas. Set in 1992,[7] San Andreas revolves around the gang member Carl "CJ" Johnson returning home from Liberty City to Los Santos, San Andreas, after learning of his mother's murder. CJ finds his old friends and family in disarray. Over the course of the game, CJ gradually unravels the plot behind his mother's murder.
+		The high-level plot of the game is based on multiple real-life events in Los Angeles including the rivalry between street gangs the Bloods and Crips (which the player's gang and rival gang are spoofed off of), the Crack epidemic (which is shown as a major point of conflict in the game), the LAPD Rampart scandal (forming the basis of several main antagonists in the game), and the game even culminates in a spoof of the 1992 Los Angeles riots."</p>
+		*From the <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas">Wikipedia</a> page.
+
+	
+	<p align="left"><img src="http://media.gtanet.com/gtasa/images/sweet_johnson.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="taggingupturf"></a>Tagging up Turf</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Ryder tells you to go and see Sweet, who is playing basketball with Smoke.  You must let the Ballas know that you are back on the set, so it's time to tag up some turf.  After the cutscene, notice you'll have an unlimited spray can.  Get in Sweet's car and drive to Idlewood.  Sweet demonstrates how it's done, and sprays the Grove Street tag over that of the Front Yard Ballas.  Now it's your turn.  2 new blips appear on your radar.  Follow them, and begin tagging -- one is on front of a house, and the other is on a wall behind the that house.  Those were easy, now let's move onto the next level.  Drive towards East Los Santos -- Ballas territory.  Spray the tag on the wall with the mural.</p><p>Goto the next location, and notice 2 Ballas guarding their territory.  They will attack you as soon as you begin spraying their tag.  You have an option -- you can kill the Ballas before spraying over their tag (you can poison them using the spray can) or you can spray the tag and do a quick runner.  The next tag is on a roof.  Jump over both fences by using the 'Square' button, and climb onto the section of wall that juts out.  From there, climb onto the wall, locate the tag and being spraying.  After all 6 tags are sprayed, get in Sweet's car (you can jump off the roof without losing any health) and drive back to the Grove to complete the mission.<br><blockquote><b>*After completing this mission you will recieve a phonecall from Officer Hernandez.  Carl hurls abuse at the officer, calling him "their bitch" (referring to Tenpenny and Pulaski).  Hernandez demands respect, and forwards a message from Officer Tenpenny:  Carl musn't leave Los Santos.  If you do decide to leave the city, you'll gain a 4 star wanted level.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos013.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos013_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos014.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos014_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos015.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos015_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos016.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos016_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="cleaningthehood"></a>Cleaning the Hood</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Sweet and Smoke are discussing the terrible state of the hood.  It's time to take out the drug dealers that are ruining Grove Street, but you'll need backup.  Go with Ryder to meet B-Dup and Big Bear.  B-Dup refuses to help and is said to have drfited apart from gangbanging and into "other activies".  Big Bear, a Grove Street legend, is clearly in need of help because of drug abuse.  Locate the dealer, who is witnessed selling goods to one of your homies.  The dealer carries a baseball bat, but nothing to worry about -- a few punches should get rid of him.  Ryder recognises the dealer.  He used to run with a Front Yard Ballas OG.  Head over to the dealer's place in Idlewood.  The house is occupied by ballas, dealers and hookers.  Make sure there are no survivors.  Once the place is clean of anybody that may cause a threat the hood, head back to Grove Street with Ryder.  Now the Ballas know that Grove Street are back on their feet -- mission complete.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos017.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos017_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos018.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos018_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos019.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos019_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos020.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos020_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos021.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos021_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos022.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos022_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos023.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos023_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos024.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos024_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="drivethru"></a>Drive-Thru</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Respect has to be earned, just like money.  But screw that for now, it's time to eat something.  Ryder suggests Tacos, but Smoke wins with his suggestion -- chicken.  Drive your homies to the Cluckin' Bell Drive-Thru in Willowfield.  During the journey, Carl asks how moms got killed.  Ryder explains that they were going for Sweet and that they accidently killed moms.  He also explains that some people saw a green sabre doing the work, and then speeding off.  When you reach the Cluckin' Bell, drive into the red marker.  Carl and Ryder order a No.9, Sweet asks for a No.6 with extra dip, and Smoke goes for two number 9s, a number 9 large, a number 6 with extra dip, a number 7, two number 45s, one with cheese, and a large soda.  A Ballas car is seen driving towards the hood.</p><p>Your objective is to chase down the gang car before they cap your homies.  After the cutscene, speed after the Ballas and drive along side them.  Sweet and Ryder will automatically lean out of the window and shoot at them, but Smoke is determined to eat.  If you have a gun, you can lend Sweet and Ryder a hand.  Press the L2 and R2 buttons to look left and right, and shoot at the Ballas.  Once the vehicle catches fire, the Ballas will flee.  You can let Sweet and Ryder finish them off, or you can simply drive over them.<br><br><i>$200, Respect +</i><br><blockquote><b>*After this mission you will recieve a phone call from Sweet.  If you don't respect your body, ain't nobody going to respect you.  Pack on some muscle at the local gym.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos025.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos025_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos026.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos026_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos027.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos027_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos028.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos028_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="ninesandaks"></a>Nines and AKs</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Grove Street have no weapons.  Other gangs have have Macs and AKs whereas Grove Street have nothing.  Carl suggests visiting Emmet, but even Emmet aint got nothing, says Sweet.  Emmet is with the Seville Boulevard Families, they aren't too close with Grove Street.  Despite this, Smoke is willing to pay a visit with you.  Drive to Emmet's with Smoke, and stop in the red marker.  Emmet isn't the brightest of people.  At first he thinks you are Brian Johnson, although he knows fine well that Brian was killed 5 years ago.  Emmet has been serving the community for 30 years.  CJ and Smoke aren't impresed when they see what Emmet has to offer, but it will do for now.</p><p>Time for a small tutorial.  Watch Smoke blast a few bottles, and repeat his actions.  The first level involves shooting whilst standing, and the second involves shooting whilst crouching.  After all the bottles have been eliminated, use manual aim to shoot the gas tank on Emmet's car.  Take Smoke back to his crib. Learn more about the weapons in San Andreas <a href="http://www.gtasanandreas.net/weapons/.jpg" target="_blank">here</a>.<br><blockquote><b>*Sweet calls you on your cellphone.  You must show your loyalty to the Grove by wearing Grove Street colours.  Travel to the nearby Binco and enter the store.  You don't actually need to buy anything, but it's worth having a look around.  Learn more about clothes <a href="http://www.gtasanandreas.net/clothing/.jpg" target="_blank">here</a>.</b></blockquote><br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos029.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos029_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos030.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos030_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos031.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos031_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos032.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos032_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="driveby"></a>Drive-By</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Ryder is complaining to Sweet about how he is a better driver than CJ.  CJ walks in unexpectantly and overhears the conversation.  Sweet explains that Ryder is a great shootist, so we need CJ on the wheel.  Ryder agrees, and the group head outside.  Get in Sweet's car with your homies, and drive into Ballas territory to cause a disturbance.  Stop in the red marker, and look at the on-screen instructions.  There are a group of Ballas standing at the corner of the street.  Concentrate on driving, and let the rest do the shooting.  Drive alongside the Ballas and Smoke, Sweet and Ryder will automatically lean out of the car and shoot.  Keep an eye on your vehicle's health meter.  If it runs out, the car will blow up and the mission is failed.  Use the L2 and R2 buttons to look left or right.</p><p>Once all of the Ballas are wasted, a new blip will appear on your radar.  Waste another 4 sets of Ballas (the final group are in Glen Park) and you'll gain a 2 star wanted level.  Head over to the Pay n' Spray shop in Idlewood, being careful as to not damage your vehicle.  Drive back to the Grove to complete this mission.  You're down with the Grove and Ballas know it, so watch yourself.<br><br><i>$500, Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos033.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos033_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos034.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos034_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos035.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos035_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos036.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos036_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="sweetsgirl"></a>Sweet's Girl</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Carl enters Sweet's house, and calls his name.  The house is completely empty - no sign of Sweet, Ryder or Big Smoke.  When he leaves the house, Carl's cellphone starts ringing.  It's Sweet, and he's pinned down at his girlfriend's house by the Seville Boulevard Families.  Sweet and his girl need a ride out of there, fast.  After the cutscene, Sweet's health bar will appear on-screen.  You must get to Sweet and take out the Seville Boulevard Families before his health bar is empty.  You can drop by Emmet's to get heated but if you already have a plentiful supply of ammo, there's no need.</p><p>When you arrive at the girlfriend's flat, Sweet is surrounded.  Take those seville boys out!  The easiest way would be to simply drive over them, but you'll need to exit your vehicle to take out the final enemy, who is standing on the steps.  Once no Seville boys remain, Sweet rings you on your cellphone.  Fetch a 4 door car to pick up Sweet and his girl.  After the cutscene, 3 cars come speeding around the corner, and the Seville boys are preparing for a chase.  Get Sweet and his girl safely back to the hood, to complete the mission.<br><br><i>Respect +</i><br><blockquote><b>*You can now recieve missions from Ryder.  Visit him between 12.00 and 20.00</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos037.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos037_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos038.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos038_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos039.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos039_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos040.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos040_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="doberman"></a>Doberman</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>This mission (and the next) is available later on in the game.  Sweet calls to say that some base-head has been buying drugs from Glen Park and supplying them to your Grove Street brothers.  He's hanging out with his new Ballas friends at the moment.  Walk into the red marker at Ammu-Nation.  If you need any weapons, now is the time to get them.  Head over to Glen Park, which is higlighted in purple on the radar.  This means that it is Ballas territory.  Attack and kill at least 3 Ballas gang members (on foot) to provoke a gang war.  The area now flashes red on the radar.  You must survive 3 waves of attacks.  Some of the Ballas will carry baseball bats, whilst others will cary powerful guns.  Stand in the middle of the park so that you can see clearly where the enemy is coming from, and then if possible, shoot from a distance.  Once you have killed the 3rd wave of enemies, the territory is yours and is now shown as green on the radar.</p><p>You have flushed the grass.  He runs out of his house screaming 'Tenpenny set me up!'  Kill him, to complete the mission.  Winning territory will gain you respect and money.  The money appears in front of your garage at Grove Street.  However, don't spend <i>too</i> much time winning territory (unless you are really desperate for money) as the feature is disabled after 'Green Sabre', until the final missions of the game.  Learn more about gang territory <a href="http://www.gtasanandreas.net/gangs/.jpg" target="_blank">here</a>.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos101.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos101_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos102.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos102_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos103.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos103_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos104.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos104_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="lossepulcros"></a>Los Sepulcros</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Tenpenny has informed Sweet that a funeral is taking place for a Ballas gang member that you shot down during the mission 'Drive-By'.  All of the OG's will be there so Sweet wants to hit them all at once as revenge for the Ballas drive-by at Moms funeral.  Recruit the two homies with the blue arrows above their heads -- they respect you enough to provide help.  To do this, target them with R1 and press 'Up' or 'Down' on the D-pad.  Get in the car with your gang and take them to the funeral.  The plan is to go around the back of Los Sepulcros and sneak over the wall.  You must get there within 4 minutes (4 gameplay hours).  Drive to the cemetry before Kane arrives, and stop in the red marker.  After the cutscene, climb the wall and approach Sweet and his men.  Kill Kane -- do not let him get away!  Once Kane is dead, kill any remaining Ballas and get in Sweet's car.  Drive him home.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos109.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos109_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos110.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos110_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos111.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos111_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos112.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos112_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/cesar_vialpando.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="cesarvialpando"></a>Cesar Vialpando</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Once again, Sweet is arguing with his sister Kendl.  Sweet doesn't like the fact that Kendl is dating Cesar of the Varios Los Aztecas, a rival gang.  Sweet wants you to follow Kendl and check out Cesar, to make sure that she isn't making a huge mistake.  When you have control over CJ, goto the garage in Willowfield.  Sweet called ahead and asked his friend [who owes Sweet big time because of a past incident] to give CJ a car that bounces.  Whilst in the car, backup into the garage.  You now have a chance to modify your ride, although it isn't absolutely necessary.  Press L3 to lock the car's hydraulics in place.  Move the right analog stick to control the hydraulic suspension and press R3 to make it hop.  Get to the lowrider meeting at Unity Station, El Corona. Drive into the red marker.  You have 3 options: Increase Wager, Decrease Wager and Proceed.  The minimum wager is $50 and the maximum is $1000.  If you lose this contest, the money that you are betted will be lost to the opposition.</p><p>A series of directions will be shown across the screen.  You must move the right analog stick in the direction shown, exactly as it passes through the circle on the middle of the screen.  Try and not let the music put you off -- concentrate on the circle.  For every bad move, points are added to the opposition.  After successfully winning this contest, a short cutscene will take place.  Kendl is delighted with your performance in the lowrider challenge, and Cesar introduces himself.  Carl demands that he take his hands off his sister, but after some discussion, he agrees to give Cesar a chance.  One of the Varios boys tries to pick a fight with CJ, but Cesar holds him off.<br><br><i>$ (the money that you betted)</i><br><blockquote><b>*Big Smoke's missions are now available.</b><br><br><b>*Cesar calls, and asks if you'd like to make some extra money.  He invites you take part in a lowrider street racing competition.  Goto the marker in El Corona if you're interested.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos041.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos041_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos042.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos042_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos043.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos043_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos044.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos044_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="highstakeslowrider"></a>High Stakes, Lowrider</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>You need to be in a lowrider car for this mission.  Choose one that <b>doesn't</b> contain hydraulics.  Hydraulics increase the difficulty of this mission by a mile (if you accidently trigger the hydraulics while racing, the vehicle becomes difficult to control and may flip).  Cesar and Kendl comment on your choice of vehicle -- very impressive, they say.  Follow Cesar to the starting point of the race, and park in the red marker.  Keep a close eye on the radar, and race through each of the red markers.  If you look closely, each marker contains an arrow pointing in the direction of the next marker.  To put it simple, the other racers are pathetic.  There's no need to race full speed in this mission.  Take your time, and you will make less faults (one fault can cause a huge amount of damage).  When you reach the marker at the Santa Maria pier, keep your foot on the pedal and race full speed towards the end of the pier, to ensure a victory.  You must finish in 1st place to pass this mission.  (If you happen to lose this race, Kendl will make a very childish phone call)<br><br><a href="../screenshots/gallery.php?image=1329" target="_blank">&raquo; Map</a><br><br><i>$1000</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos113.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos113_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos114.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos114_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos115.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos115_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos116.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos116_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/ryder.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="homeinvasion"></a>Home Invasion</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Ryder seems anxious.  He can't remember where he put "the water" in his back yard, so he's desperately scrapping about.  He needs some before he "deals" with things.  Ryder's homie LB tells him that an army guy (Colonel Fuhrberger) has all the weapons that Grove Street need.  The plan is to rob Fuhrberger when its dark and he's asleep.  After the cutscene, the time is automatically set as 22.00, and a boxville is placed outside Ryder's crib.  Drive to Colonel Fuhrberger's, overlooking East Beach.  Enter his house, and follow the on-screen instructions.  You have a total of 8 minutes (8 game hours) to retrieve the goods and exit the colonel's house.  A noise meter will appear, and you must remain silent at all times otherwise Furherberger will hear and call the cops.</p><p>There are various crates scattered across the house.  Press 'Triangle' to pick up a crate, and 'Triangle' to release it again.  Dropping a crate will cause noise.  Once you have picked up a crate, exist the house and drop it into the back of the van.  After you have at least 3 crates, get in the van with Ryder and offload the goods at LB's garage in Willowfield.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos045.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos045_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos046.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos046_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos047.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos047_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos048.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos048_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="catalyst"></a>Catalyst</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Ryder never did find his water, so he's cooking "a little something" something for himself.  The C.R.A.S.H team (Tenpenny, Pulaski and Hernandez) make an unexpected appearance.  Tenpenny and Pulaski mock Ryder.  Tenpenny says he's got something for Grove Street.  It'll be there in 5 minutes.  Drive Ryder's truck to the ammo train and you will see that its surrounded by Northside Vagos -- looks like Tenpenny told every gang in the city about this train.  Take out the Vagos, and a group of Ballas will enter the scene.  Protect the train from the Ballas.  Walk into the red marker at the rear end of the train.  CJ climbs on, but Ryder follows in his truck as the train begins to move.</p><p>Your mission is to throw the ammo crates onto the back of Ryder's truck.  You must throw 10 crates within a minute and a half.  Move the left analog stick left and right to direct your throw, hold L1/Circle to power your throw, and then release.  You can also move the left analog stick up and down to increase/decrease your throwing distance.  Once Ryder has 10 crates, you will gain a 3 star wanted level.  Make your way to the Pay n' Spray in Idlewood, to lose the heat.  Get back to the Grove -- LB's coming over to stash the goods.<br><br><a href="../screenshots/gallery.php?image=1328" target="_blank">&raquo; Map</a><br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos049.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos049_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos050.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos050_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos051.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos051_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos052.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos052_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="robbingunclesam"></a>Robbing Uncle Sam</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Ryder is stoned out of his mind.  He asks CJ a question:  Why did he (Ryder) drop out of high school?  CJ believes its because he put hands on the teacher that was wearing Ballas colours.  The real answer is, he's too intelligent.  Ryder goes onto explain that the army have all the guns they need.  Get in the van with Ryder and drive to the compound at Ocean Docks.  (For sake of interest, LB parked the van outside Ryder's house.  He's very dependable.  Like a clockwork ninja!)  A car is seen driving into the compound.  After the short cutscene climb over the wall and kill the guard.  Shoot the lock and allow Ryder to drive in.  There's another guard over by the warehouse.  Get rid of him, and shoot the lock on the warehouse.  Destroy the 2 guards, and get in the forklift.  2 new items are displayed on-screen -- Ryder's health bar, and the number of boxes collected.Position the forklift in front of one of the crates, and  raise the box using the right analog stick.  Place the boxes in the back of the van by simply driving into it.</p><p>Collect all 4 boxes inside the warehouse, and then the 2 outside.  If you hear shooting whilst collecting the boxes, get out of the forklift and protect Ryder.  He isn't very reliable, and his health will run out quickly.  Once all 6 boxes have been obtained, get back in the truck.  Ryder climbs into the back, and 2 cars begin chasing.  Make your way to the lockup in Willowfield.  Sound the horn (R3) and Ryder will throw an exploding crate at the chasers.<br><br><i>Respect +</i>      
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos053.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos053_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos054.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos054_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos055.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos055_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos056.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos056_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/smoke.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="ogloc"></a>OG Loc</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Smoke and Sweet are joking about Jeff.. I mean er, OG Loc, who is to be released from prison today.  Drive Smoke and Sweet to pick up Jeffrey.  Park in the red marker to trigger the cutscene.  Loc walks out of the building, and towards the Grove Street OG's.  Loc explains that he has to kill somebody who was dissing him in prison.  Drive to freddy's house, in Vagos hood.  Stop in the red marker.  Sweet and Smoke leave, but Carl decides to stay and help Loc.  Stand in the red marker at the top of the stairs, to ring the doorbell.  After a short discussion, freddy escapes via the back door, and hops on a bike.  Chase and kill freddy!</p><p>Grab the bike in front of you, and keep up with freddy.  Loc will shoot from the back, but he won't perform very well.  Freddy stops at several locations to allow you to catch up, so there's no need to rush.  After a long chase through Los Santos, freddy will stop at the basketball court across from the Ganton Towers, where a group of Vagos are waiting.  Leave no survivors.  Take Loc to his new place of work -- the Burger Shot in Marina.<br><br><i>Respect +</i><br><blockquote><b>* OG Loc's missions are now available.  See him at the Burger Shot in Marina.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos057.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos057_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos058.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos058_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos059.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos059_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos060.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos060_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="runningdog"></a>Running Dog</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Carl is surprised to find that Tenpenny and Pulaski have paid a visit to Big Smoke's house.  Smoke says they won't leave him alone but quickly changes the subject.  His cousin is moving in from Mexico, and he must pick her up.  Get in Smoke's car, and drive him to the meet.  If you need a weapon, drop by Emmet's.  During the journey, Carl discovers that, as per usual, Smoke is talking out of his ass.  Cousin Mary is infact his weed supply.  Stop in the red marker, and Smoke begins talking to some Vagos dealers.  They clearly tell him to f--- off.  Smoke, angered, gets out of the vehicle and whacks one of them with a baseball bat.  The other makes a run for it, climbing several fences whilst doing so.  CJ and Smoke follow, but Smoke is too fat to continue!  Hunt down and kill the gang member, to complete the mission.  You can climb walls using 'Square', and sprint by holding 'X'.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos061.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos061_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos062.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos062_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos063.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos063_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos064.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos064_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="wrongsideofthetracks"></a>Wrong side of the Tracks</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br> 
+
+<p>Once again, Tenpenny and Pulaski are spotted leaving Big Smoke's house -- this time through Smoke's garage.  They seem increasingly interested in Big Smoke.  Smoke knows about something that might put Grove Street "deeper in the game."  Drive Big Smoke to Unity Station, and stop at the red marker.  You're looking for some Vagos cats meeting with the San Fierro Rifa, cutting some kind of deal.  The meeting is taking place on the roof, but unfortunately, the Mexicans see you.  They hop onto the roof of the train, and off it goes.  Get on the motorbike wth Big Smoke, chase down the Vagos gang members and take them out!  Keep up with the front carriage of the train so that Big Smoke can shoot the Vagos.  Don't drive too close to the train otherwise Smoke will shoot the train itself, and not the Vagos! -- stay as far to the side of the train as possible.</p><p>As the train passes Idlewood, a car is seen parked at a crossing.  The train continues going at full speed, and the car explodes, so make sure you avoid it.  Watch out for the oncoming train as you enter the tunnel at East Los Santos, leading into the countryside -- move to the right of the oncoming train, and stay off the track for a bit.  CJ is still forbidden to leave Los Santos, so you can't let the train get any further than the Frederick Bridge.  Once all of the Vagos gang members have been destroyed, take Smoke back to his house.<br><br><a href="../screenshots/gallery.php?image=1642" target="_blank">&raquo; Map</a><br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos065.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos065_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos066.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos066_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos067.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos067_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos068.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos068_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="justbusiness"></a>Just Business</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Smoke is going downtown, and he wants you to go with him.  As usual, CJ is down.  Take Big Smoke to downtown Los Santos, and stop in the red marker.  Smoke tells you to wait outside, but to come in if you hear any shooting.  Seconds later, Big Smoke is heard screaming.  Go inside!  The russians are attacking Big Smoke.  Shooting whilst you are crouching improves your accuracy.  Kill all of the russians in the building, and follow Big Smoke to the exit.  There are more russians outside, leave no survivors.  Smoke jumps on a motorbike, with Carl on the back.  A health bar for the motorbike appears, and some russians begin to chase.  To look around on the bike, use the left analog stick and to fire, press 'Circle'.  Aim for the russians, not the bike.  The bike would eventually catch fire and explode, but it is much quicker and easier to shoot the russians off of the bike.</p><p>A truck enters the scene, and also follows.  The truck is bulletproof and will not explode, so don't waste time shooting at it.  Smoke drives into the Los Santos flood control trench, where the rest of the chase will take place.  More bikes follow -- take out all of the russians.  Smoke drives over two buses linked together, and the truck hits another bus, sending it off course.  There's two road blocks up ahead, so shoot down all the russians and their vehicles.  Another two bikes enter the scene, aswell as two cars.  Begin by shooting the russians off of the bikes, and then target the cars tires, before blowing them up.  More bikes follow, and the truck re-appears, making a spectacular jump over the bridge.  In order to lose some of the heat, Smoke drives up a ramp, but 2 more bikes appear behind.  Continue shooting at the russians and protect your bike.  A cutscene begins, and Smoke drives up the back of the truck.  Suddenly, every vehicle belonging to the russians explode.  There's an old sewer up ahead, that Smoke drives through.  Russians continue chasing from behind.  Smoke manages to lose the chasers, and decides that it is best to split up.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos069.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos069_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos070.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos070_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos071.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos071_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos072.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos072_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/loc.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="lifesabeach"></a>Life's a Beach</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Loc needs a sound system, and he saw one cruisin' through the drive-thru earlier on.  He says it was heading towards the Santa Maria beach.  Goto the beach party!  When you get to the beach party, go and talk to the DJ.  She asks you to dance, and you must reply positively.  Press 'Right' two times to begin dancing, and don't shoot at anybody or you will disturb the beach party and the mission is automatically failed.  You must get a score of 4000 or greater to gain access to the sound van.  Just like the mission 'Cesar Vialpando', you must press the buttons shown on-screen just as they pass through the circle on the middle of the screen.  If you win, the DJ invites you into her van.  CJ throws her out of the van and speeds off.  She begins shooting, so make a quick getaway.  Follow the blip on the radar and get the van back to the garage.  During the journey, two cars from the beach party will chase.  Don't bother shooting at them but instead keep focused on the blip on the radar.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos073.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos073_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos074.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos074_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos075.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos075_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos076.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos076_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="maddoggsrhymes"></a>Madd Dogg's Rhymes</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Loc is cleaning the floor at the Burger Shot.  He begins singing to himself.  Somebody walks out of the toilet and says that his rapping sucks.  Carl enters and asks Loc if he has ever thought about getting a writer to help.  Loc starts talking about Madd Dogg's rhyme book, from his home in the hills.  He wants you to steal Madd Dogg's rhyme book, but Carl is unsure at first.  Go to Madd Dogg's mansion -- the main door is around the back.  The rhyme book is in Madd Dogg's recording studio, represented by the blip on the radar.  However, it's not as easy as it looks.  Madd Dogg's personal security are patrolling the mansion, so do not use any guns on your way to the rhyme book or you will alert them.  You must use stealth to steal the rhyme book.  The first guard (red blip on the radar) cannot see you as he facing the other way.  This means you can sneak up behind him with a melee weapon and perform a stealth kill.  The red blips on the radar point in the direction that the guard is facing.  Perform the stealth kill by moving slowly towards the guard and pressing 'Circle' whilst targeting with the knife.  The second guard is patrolling the swimming pool area.  Observing his route will allow you to work out how to get past undetected.  There are lots of shadows in this area to hide in.  Hiding in shadows makes it difficult for the a guard to spot you.  When you are in a shadowed area, your blip turns grey on the radar.</p><p>Continue walking towards the rhyme book.  Another guard is coming, so move into the shadowed area towards the left.  When he is facing the opposite direction, crouch and sneak up behind him to perform a stealth kill.  Move into the bar area, where one of the guards happens to be playing Driv3r, and makes reference to Tanner.  It is not possible to perform a stealth kill on the guard behind the bar, so crouch and walk by the bar so that he doesn't see you.  Pick up the rhyme book when you reach the recording studio.  More guards spawn, but it is now okay to use your weapons, although, it would be easier if you continued using stealth.  The guards use silenced pistols, so if you kill one be sure to collect it and you can fire the other guards without making a noise.  Leave the mansion the same way you came in, and grab the mountain bike outside.  Take the rhyme book back to OG Loc.<br><br><i>Respect +</i><br><blockquote><b>*Officer Tenpenny phones.  How did he get your number?! He asks you to meet him at the donut place in Vinewood.  He's got a couple of jobs for you.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos077.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos077_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos078.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos078_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos079.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos079_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos080.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos080_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="managmentissues"></a>Managment Issues</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>See Loc between 12.00 and 05.00.  The Appliance Technician at Burgershot called in sick, so Loc got promoted.  He's cleaning the frier just now.  Loc is unhappy.  Dogg's manager has been pressurising him, and telling everybody that Loc is whack.  Loc wants you to kill him.  He's attending some kind of awards ceremony and thats the only time he leaves Dogg's side.  One of Madd Dogg's managers drivers is eating at the Burger Shot across town.  Go and steal his car and meet the other drivers before 10PM.  During your journey to the Burger Shot, Loc phones to tell you that the chauffeur has left the restaurant and is heading towards the awards ceremony.  Damage the car to scare the driver out, and run him over.  Get in the car, get it repaired at the nearest Pay n' Spray, and meet the other drivers.  Park the same way as the other drivers in the red marker.  They get in their cars.  You must keep in the middle of the other two vehicles whilst driving to the awards ceremony.</p><p>When you reach the ceremony, Dogg's manager will get in your car with his bitch, and ask you to take him back to Dogg's mansion.  But not this time -- the only place he is going is under the ocean.  Put your foot on the pedal and race down to the Santa Maria pier.  Be careful as the other drivers will follow and attempt to ram you off the road.  Go full speed towards the end of the pier and bail before it reaches the end.  Watch the cutscene as Madd Dogg's manager faces a watery death!<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos081.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos081_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos082.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos082_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos083.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos083_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos084.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos084_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center><center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos085.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos085_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos086.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos086_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos087.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos087_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos088.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos088_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="houseparty"></a>House Party</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>Loc quits his job as Appliance Technician at the Burger Shot -- apparently it's not gangsta enough.  If he's going back to prison, he wants a big ass party first with lots of nice bitches.  The house party will take place at OG Loc's house in Grove Street at 8PM and it will finish at 5AM.  Although its not necessary, you are told to get some new threads and a haircut.  Loc phones later on to tell you that they got some girls for the party.  He invites you to join them.  Go between 20.00 and 06.00.  When you arrive at the party, Loc is rapping, terribly, might I add.</p><p>CJ meets up with Ryder and they go outside to avoid the awful music.  Outside they meet Sweet and the rest of the gang.  One of your homies cycles down the street and warns you of a Ballas posse heading towards Grove Street.  Sweet asks that 2 cars block the road.  Ryder calls for backup whilst the others get heated.  Kill the Ballas and protect Grove Street!  Soon after, more Ballas will appear on the bridge above.  If you have a rocket launcher, now is the perfect time to use it.  If not, cap them one-by-one with whatever weapon you have.  Sweet orders you to cover the alleyway.  The Ballas enter Grove Street from all directions, so watch your back.  Once all of the Ballas are eliminated, Sweet shouts 'GROVE IS KING!'.  They go back to enjoy the party.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos089.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos089_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos090.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos090_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos091.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos091_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos092.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos092_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/crash.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="burningdesire"></a>Burning Desire</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>The C.R.A.S.H. team are waiting at the donut shop in Vinewood.  Tenpenny calls Carl over, and offers him a seat.  CJ says he couldn't visit earlier because he was busy.  Pulaski thinks CJ is screwing with them, and Tenpenny makes it perfectly clear that they own him.  He then goes onto explain that there's a gang-banging cop-killing thug like yourself holed up across town.  Pulaski hands you the address.  Your job is to make sure that he doesn't leave the neighbourhood alive.  Tenpenny has hidden some molotovs in an alleyway in Downtown Los Santos -- pick them up.  You can use the cop car parked in front of the donut shop to get there.  Once you have collected the molotovs, goto the Vagos gang house and torch it.  Kill the gang members standing in front of the house.  Throw molotovs into the downstairs windows, each marked with a red arrow.  Press and hold 'Circle' to throw a molotov.  Hold 'Circle' longer to throw longer distances, but make sure it doesn't bounce back towards you.  More Vagos will attack as you torch the house, so be prepared -- 2 will move in from the west when you are at the back of the house, and there is 1 or 2 towards the east.</p><p>You soon discover that a girl is trapped inside, and she is choking because of the dense smoke.  Go inside the Vagos Gang House and save the girl before her health bar runs out.  Go into the kitchen and collect the fire extinguisher.  Then go up the stairs and use the fire extinguisher to put out the flames seperating you and the girl.  After the short cutscene, the girl will follow you wherever you go.  The roof collapses, and the house is beginning to fall in.  Extinguish any flames blocking the exits, and ensure that the girl gets out safely.  Hold R1 for better aiming with the fire extinguisher.  Once you leave the house, the girl thanks you, gives you a kiss and introduces herself.   Give her a ride home.  Her name is Denise Robinson and she is now your girlfriend.<br><blockquote><b>*Completing this mission re-opens the Sweet mission strand.  Sweet calls to say that somebody has been buying drugs from Glen Park and supplying them to your Grove Street brothers.  He wants you to mess up Glen Park real good so that he'll lose nerve and flee.  Stop by Ammu-Nation and get heated.</b></blockquote>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos093.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos093_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos094.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos094_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos095.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos095_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos096.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos096_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos097.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos097_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos098.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos098_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos099.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos099_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos100.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos100_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="grayimports"></a>Gray Imports</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>The C.R.A.S.H. team are leaving the donut shop just as Carl is about to enter.  Tenpenny says that he loves seeing gangs do his job for him, blowing each others brains out and such.  So when one gang has a strong advantage over the other, that worries him.  The Ballas, according to Tenpenny, have a very unfair advantage.  They have brains, they're watching the news, cuttin' deals and so on.  He tells you to check out a busy freight warehouse down at the docklands, to see what he's talking about.  Goto the docks where the Ballas and the Russians are making a deal.  Stop in the red marker.  The Russians and the Ballas are holding a meeting inside the warehouse.  Use the door shown in the cutscene to get inside.</p><p>Enter the compound and begin by shooting the explosives on the forklifts, causing the forklifts to explode.  Eliminate all of the Russian guards, and walk to the entrance.  Shoot the lock to open the door, and kill the Russians inside.  Follow the red blip on the radar to locate the Russian Arms dealer.  There are Ballas and Russians everywhere so stay low and watch your back.  The arms dealer is inside the office at the top of the stairs, but he'll make a run for it as soon as you go up.  It is unlikely that you will kill him before he gets in his car, so grab the motorbike and give him a chase.  You can shoot forwards on the bike or from the sides by looking left or right (L2 and R2).  Make sure he doesn't escape.
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos105.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos105_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos106.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos106_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos107.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos107_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos108.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos108_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<p align="left"><img src="http://media.gtanet.com/gtasa/images/los_santos_finale.jpg" width="400" height="70" alt="IMAGE"></p>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="reunitingthefamilies"></a>Reuniting the Families</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>See Sweet between 09.00 and 17.00.  Ryder, Smoke and Sweet are watching a porno when Carl enters the room.  Sweet tells them to switch the television off and listen up.  It's time to make things final -- no more base on the streets, it's ruining Grove Street.  There's a meeting being held at the Jefferson Motel, where all of the families will try and settle their differences.  Get in the car and take the crew to the meet.  Stop in the red marker.  Sweet explains that its strictly one representetive per set, so he's going in alone.</p><p>Sweet enters the motel, and an LSPD chopper heads towards the building.  Two SWAT vans appear and a shootout begins.  Smoke and Ryder flee, but CJ is determined to get his brother out of there safely.  Nevermind the action thats going on outside.  Go inside the building, and kill any attackers at the entrance.  Walk towards the stairs, and CJ will ask a dying gangster where Sweet is.  He says that they were meeting in the back someplace.  [You can purchase drinks at the vending machines to replenish your health.]  Go up the stairs and follow the blue blip on the radar.  A SWAT cop appears from around the corner, and another as you turn left.  Leave no survivors.  (On a slightly unrelated note, if you enter the first room on the left, a girl will kiss you).  Goto the end of the corridor and take out all of the SWAT cops.  There's armor at the top of the stairs if you need any.  Go down the second hallway and finish off any remaining cops.  Go into the room and talk to Sweet, you need to get out of here fast.</p><p>CJ and Sweet are now on the roof of the motel, and another LSPD chopper appears.  Sweet's health bar appears on-screen.  Shoot down the chopper (with a rocket launcher, if you have one) and protect Sweet.  Follow him down the stairs.  Smoke and Ryder re-enter the scene.  Get in the car and Smoke hands you an AK.  To look around the car use the left analog stick, and to fire press 'Circle'.  Shoot off any police cars (aim for the tires first, and then the body of the vehicle), and some police bikes will begin to follow.  Aim for the officers on the bike, not the bike itself.  The cops on the bikes jump onto the car, and start punching you.  Get rid of them.  The AK gets jammed, and no longer works.  Smoke takes a right turn, and a chopper has its blades pointed towards the ground, creating an unstoppable barrier.  One of the bike cops remains on the front of the car.  Smoke drives full speed towards the chopper, and the cop is sliced up by the blades.  The brakes are now jammed, and the crew bail from the car is it goes flying through a billboard and onto an articulated truck, causing a massive explosion.  Everybody splits up.<br><br><i>Respect +</i>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos117.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos117_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos118.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos118_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos119.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos119_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos120.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos120_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr>
+<tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos121.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos121_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos122.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos122_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos123.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos123_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos124.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos124_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos125.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos125_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos126.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos126_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos127.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos127_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos128.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos128_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br><table width="100%"  border="0" cellpadding="0" cellspacing="0"><tr><td width="32"><img src="http://media.gtanet.com/gtasa/images/layout/dateleft.gif" width="32" alt="IMAGE"></td><td class="date"><a name="thegreensabre"></a>The Green Sabre</td><td width="17"><img src="http://media.gtanet.com/gtasa/images/layout/dateright.gif" width="17" alt="IMAGE"></td></tr></table><br>
+
+<p>It's time to show the Ballas what banging is all about.  Sweet motivates the homies, and publicly thanks CJ for getting Grove Street back on its feet.  Sweet orders everyone to get heated, and meet him under the Mulholland Intersection.  CJ leaves the house, and Cesar calls.  He says that its very important, and that you must see it now.  Go and meet Cesar under the freeway northside of Verdant Bluffs.  Walk into the red marker, and then go inside the car with the tinted windows down the alleyway.  Inside the car, Cesar and CJ look across the street, as some Ballas exit a garage, followed by Ryder and Smoke, and finally Officer Tenpenny.  Pulaski reverses the green sabre out of the garage.  Yes, the same green sabre that was used to attack Grove Street when CJ's mother was killed.  Smoke sold you out.  Suddenly, CJ remembers about Sweet and orders Cesar to get Kendl to a safe place.  Sweet and the homies are clearly running into a trap.  Race over to the underside of the Mulholland Intersection before Sweet's health bar runs out.</p><p>Walk into the red marker.  Sweet is injured, and can't continue shooting.  Hold off the Ballas until the police arrive.  More Ballas appear in a van, and more follow in cars.  Leave no survivors.  Eventually, 3 police cars arrive, and there's nothing you can do except watch.  CJ is inside a police car, with a bag over his head.  It is removed, and you discover that you are in the middle of nowhere with Tenpenny and Pulaski.  Tenpenny reveals that Sweet is alive and inside a prison hospital being treated for gunshot wounds, but for now, Pulaski has a job for you.  CJ is still trying to get over the fact that Smoke betrayed him.  Smoke does what he's told, says Pulaski.  Tenpenny orders you to stay away from C.R.A.S.H. and Smoke.  There's a guy hiding up Mount Chiliad who disagrees with Tenpenny and Pulaski's methods.  Pulaski wants him dead, and he wants evidence from you that he isn't going to talk.<br><br><a href="../screenshots/gallery.php?image=1643" target="_blank">&raquo; Map</a>
+
+<center><table class="newsquote"><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos129.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos129_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos130.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos130_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos131.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos131_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos132.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos132_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr><tr><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos133.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos133_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos134.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos134_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos135.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos135_t.jpg" height="105" width="150" alt="IMAGE"></a></td><td><a href="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos136.jpg" target="_blank"><img src="http://media.gtanet.com/gtasa/walkthrough/lossantos/lossantos136_t.jpg" height="105" width="150" alt="IMAGE"></a></td></tr></table></center>
+
+<br>
+
+<blockquote><p><h3>A break from Los Santos...</h3>
+
+<table><tr><td>Los Santos is too dangerous at the moment, so it's time to take a break.  From this point forward, you will not be able to provoke gang wars (or defend your own territory) and you cannot collect earnings from the Johnson House.  These features re-open towards the end of the storyline.  For the time being -- Ballas control Grove Street (and a majority of Los Santos), Sweet is in prison, Ryder and Smoke have betrayed you, and Tenpenny requires another favour.  The next set of missions are based in the countryside (Flint County and Red County) where you meet characters such as The Truth, a crazed hippie, and Cesar's cousin Catalina.</td><td>
+<a href="../screenshots/gallery.php?image=2219" target="_blank"><img src="http://media.gtanet.com/images/t_2219.png" height="113" width="150" class="contentimage" alt="IMAGE"></a></td></tr></table></blockquote>
+
+<p align="right"><a href="gta_sa_badlands.html">&raquo; Continue to Badlands Missions</a></p>
+</div>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="files/jquery.js"></script>
+    <script src="files/bootstrap-transition.js"></script>
+    <script src="files/bootstrap-alert.js"></script>
+    <script src="files/bootstrap-modal.js"></script>
+    <script src="files/bootstrap-dropdown.js"></script>
+    <script src="files/bootstrap-scrollspy.js"></script>
+    <script src="files/bootstrap-tab.js"></script>
+    <script src="files/bootstrap-tooltip.js"></script>
+    <script src="files/bootstrap-popover.js"></script>
+    <script src="files/bootstrap-button.js"></script>
+    <script src="files/bootstrap-collapse.js"></script>
+    <script src="files/bootstrap-carousel.js"></script>
+    <script src="files/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="files/holder.js"></script>
+  
+
+</body></html>

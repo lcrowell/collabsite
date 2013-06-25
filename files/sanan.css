@@ -1,0 +1,228 @@
+/* CSS Document */
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image:  url('http://media.gtanet.com/gtasa/images/gtasananbg.jpg');
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CA5515;
+}
+
+img {
+	border: 0;
+}
+
+a:link, a:active, a:visited {
+        color: #A7A666;
+        text-decoration: none;
+        font-weight: bold; 
+}
+
+a:hover {
+        color: #DAD999;
+        text-decoration: none;
+        font-weight: bold; 
+}
+
+.unnamed1 {
+	background-image:  url('http://media.gtanet.com/gtasa/images/topright.jpg');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.unnamed2 {
+	background-image:  url('http://media.gtanet.com/gtasa/images/topmid.jpg');
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.unnamed3 {
+	background-image:  url('http://media.gtanet.com/gtasa/images/lhsign.gif');
+	background-repeat: no-repeat;
+}
+
+.mleft {
+	background-color: #501E0A;
+	background-image:  url('http://media.gtanet.com/gtasa/images/mainlft.gif');
+	background-repeat: repeat-y;
+}
+
+.mright {
+	background-color: #501E0A;
+	background-image:  url('http://media.gtanet.com/gtasa/images/mainrt.gif');
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+.mainbr {
+	font-size: 1px;
+}
+
+.mbttm {
+	background-color: #501E0A;
+	background-image:  url('http://media.gtanet.com/gtasa/images/mainbttm.gif');
+	background-repeat: repeat-x;
+	font-size: 1px;
+}
+
+.topsign {
+	background-image:  url('http://media.gtanet.com/gtasa/images/sign.gif');
+	background-repeat: no-repeat;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+        font-weight: bold;
+	color: #A7A666;;        
+}
+
+.topsign a:link, .topsign a:visited, .topsign a:active { 
+        font-size: 10px; 
+        font-weight: normal;  
+}
+
+.topsign a:hover {
+        font-size: 10px; 
+        font-weight: normal;  
+}
+
+.lhs {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+        font-weight: normal;
+	color: #A7A666;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.lhs a:link, .lhs a:visited, .lhs a:active {
+        font-weight: normal; 
+}
+
+.lhs a:hover {
+        color: #DAD999;
+        font-weight: normal; 
+}
+
+.rhs {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #501E0A;
+	padding-right: 4px;
+	padding-left: 4px;
+	font-weight: bold;
+}
+
+a {
+	color: #A7A666;
+}
+
+.newsquote td { 
+	font-weight: normal; 
+	font-size: 11px; 
+	color: #CA5515; 
+	border: 1px;
+ 	border-color: #340100; 
+	border-style: solid; 
+	border-left-style: solid; 
+	padding: 6px; 
+ 	background-color: #340100;
+}
+
+h3 { 
+	font-weight: bold; 
+	font-size: 14px; 
+	color: #CA5515;    
+}
+
+.contentquote td { 
+	font-weight: bold; 
+	font-size: 14px; 
+	color: #CA5515; 
+	padding: 6px; 
+ 	background-color: #340100;
+}
+
+.contentimage {
+	font-weight: normal; 
+	font-style: italic; 
+	font-size: 11px; 
+	color: #CA5515; 
+	border: 1px;
+ 	border-color: #340100; 
+	border-style: solid; 
+	padding: 6px; 
+ 	background-color: #340100;
+}
+
+.contentimage img {
+ 	border-color: #340100; 
+}
+
+.textarea { 
+	font-size: 13px;
+        width: 500px;
+
+}
+
+#mycountdowndiv { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #340100;
+	padding-right: 4px;
+	padding-left: 4px;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+#newstitle {font-size: 16px;}
+
+#newstitle a {text-decoration: none; color: #CA5515;}
+
+.date {
+	margin: 15px 0px 15px 0px;
+	height: 28px;
+	background: url('http://media.gtanet.com/gtasa/images/layout/datebg.gif') repeat-x;
+	line-height: 26px;
+}
+.dateleft {
+	background: url('http://media.gtanet.com/gtasa/images/layout/dateleft.gif') no-repeat left;
+	height: 28px;
+	width: 32px;
+	float: left;
+}
+.dateright {
+	background: url('http://media.gtanet.com/gtasa/images/layout/dateright.gif') no-repeat right;
+	height: 28px;
+	width: 17px;
+	float: right;
+}
+.newsdetails {
+	font-size: 9px;
+	color: #A7A666;
+	margin: 0px;
+}
+
+.newspost {
+	margin: 0px 15px 0px 15px;
+}
+
+.newspost h2,.newspost h2 a {
+	color: #CA5515;
+	margin: 0px;
+	font-size: 16px;
+	text-decoration: none;
+}
+.newspost h2 a:hover {
+	color: #A7A666;
+}
+.newsbody {
+	line-height: 115%;
+	margin: 30px 0px 30px 0px;
+}
+.newsbody h2 {
+	color: #CA5515;
+	font-size: 16px;
+}
